@@ -105,11 +105,42 @@ class FormalService:
         self._check_tools()
 
     def _check_tools(self):
-        """Check if sby and yosys are available."""
-        self.sby_available = shutil.which("sby") is not None
-        self.yosys_available = shutil.which("yosys") is not None
+        """Check if sby and yosys are available, including oss-cad-suite fallback."""
+        OSS_CAD_CANDIDATES = [
+            Path.home() / "Downloads" / "oss-cad-suite" / "bin",
+            Path("/opt/oss-cad-suite/bin"),
+            Path("/usr/local/oss-cad-suite/bin"),
+        ]
+
+        def _find(tool: str) -> Optional[str]:
+            # Prefer PATH entry that actually works (skip broken installs)
+            path_hit = shutil.which(tool)
+            if path_hit:
+                try:
+                    r = subprocess.run([path_hit, "--version"], capture_output=True, timeout=5)
+                    if r.returncode == 0:
+                        return path_hit
+                except Exception:
+                    pass
+            # Fall back to known oss-cad-suite locations
+            for d in OSS_CAD_CANDIDATES:
+                candidate = d / tool
+                if candidate.exists():
+                    try:
+                        r = subprocess.run([str(candidate), "--version"], capture_output=True, timeout=5)
+                        if r.returncode == 0:
+                            return str(candidate)
+                    except Exception:
+                        continue
+            return None
+
+        self.sby_path = _find("sby")
+        self.yosys_path = _find("yosys")
+        self.sby_available = self.sby_path is not None
+        self.yosys_available = self.yosys_path is not None
+
         if self.sby_available:
-            logger.info("SymbiYosys (sby) found in PATH")
+            logger.info(f"SymbiYosys (sby) found: {self.sby_path}")
         else:
             logger.warning("SymbiYosys (sby) NOT found. Formal verification unavailable.")
             logger.warning("Install OSS CAD Suite: https://github.com/YosysHQ/oss-cad-suite-build/releases")
@@ -290,7 +321,7 @@ class FormalService:
         """Execute SymbiYosys and parse its output."""
         try:
             proc = subprocess.run(
-                ["sby", "-f", sby_file],
+                [self.sby_path, "-f", sby_file],
                 capture_output=True,
                 text=True,
                 timeout=timeout,
@@ -494,8 +525,8 @@ class FormalService:
         return {
             "sby": "available" if self.sby_available else "not_installed",
             "yosys": "available" if self.yosys_available else "not_installed",
-            "sby_path": shutil.which("sby") or "",
-            "yosys_path": shutil.which("yosys") or "",
+            "sby_path": self.sby_path or "",
+            "yosys_path": self.yosys_path or "",
             "work_dir": str(FORMAL_WORK_DIR),
             "active_jobs": sum(1 for j in _jobs.values() if j.status in ("queued", "lowering", "proving")),
             "total_jobs": len(_jobs),
