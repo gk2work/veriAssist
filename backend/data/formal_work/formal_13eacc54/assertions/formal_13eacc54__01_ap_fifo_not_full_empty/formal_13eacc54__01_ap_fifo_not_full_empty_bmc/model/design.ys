@@ -1,0 +1,8 @@
+# running in /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__01_ap_fifo_not_full_empty/formal_13eacc54__01_ap_fifo_not_full_empty_bmc/src/
+read -formal formal_13eacc54__01_ap_fifo_not_full_empty_monitor.sv
+prep -top fifo
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

@@ -1,0 +1,23 @@
+{
+  "format": "Yosys Witness Trace",
+  "generator": "smtbmc",
+  "clocks": [
+    {"path": ["\\clk_in"], "edge": "posedge", "offset": 0}
+  ],
+  "signals": [
+    {"path": ["\\clk_in"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\data_start"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\empty_out"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\full_out"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\rd_data_out"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\rd_en_in"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\rst_n_in"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\wr_data_in"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\wr_en_in"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\_va_ap_fifo_write_not_empty_delay_2"], "width": 1, "offset": 0, "init_only": true}
+  ],
+  "steps": [
+    {"bits": "1001000100"},
+    {"bits": "000000000"}
+  ]
+}

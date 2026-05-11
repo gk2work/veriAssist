@@ -1,0 +1,27 @@
+initial
+assume (= [$auto$async2sync.cc:107:execute$165] false)
+assume (= [$auto$async2sync.cc:116:execute$169] true)
+assume (= [full_out_prev] false)
+assume (= [wr_en_in_past1] false)
+
+state 0
+assume (= [clk_in] false)
+assume (= [data_start] false)
+assume (= [empty_out] false)
+assume (= [full_out] true)
+assume (= [rd_data_out] false)
+assume (= [rd_en_in] false)
+assume (= [rst_n_in] true)
+assume (= [wr_data_in] false)
+assume (= [wr_en_in] false)
+
+state 1
+assume (= [clk_in] false)
+assume (= [data_start] false)
+assume (= [empty_out] false)
+assume (= [full_out] false)
+assume (= [rd_data_out] false)
+assume (= [rd_en_in] false)
+assume (= [rst_n_in] false)
+assume (= [wr_data_in] false)
+assume (= [wr_en_in] false)

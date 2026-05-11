@@ -1,0 +1,16 @@
+initial
+assume (= [$auto$async2sync.cc:107:execute$16] false)
+assume (= [$auto$async2sync.cc:116:execute$20] true)
+assume (= [_va_assert_p1_triggered_1] true)
+
+state 0
+assume (= [a] false)
+assume (= [b] false)
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 1
+assume (= [a] false)
+assume (= [b] false)
+assume (= [clk] false)
+assume (= [rst_n] false)

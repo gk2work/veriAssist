@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-04-07T14:55:25" hostname="Gautams-MacBook-Pro.local" package="formal_c6ac59f6" id="0" name="bmc" tests="1" errors="1" failures="0" time="0" skipped="0">
+<properties>
+<property name="os" value="Darwin"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="ERROR"/>
+</properties>
+<testcase classname="bmc" name="bmc" time="0">
+<error type="ERROR"/>
+</testcase>
+<system-out>SBY 14:55:25 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_c6ac59f6/formal_c6ac59f6_bmc] Removing directory '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_c6ac59f6/formal_c6ac59f6_bmc'.
+SBY 14:55:25 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_c6ac59f6/formal_c6ac59f6_bmc] Copy '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_c6ac59f6/formal_c6ac59f6_monitor.sv' to '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_c6ac59f6/formal_c6ac59f6_bmc/src/formal_c6ac59f6_monitor.sv'.
+SBY 14:55:25 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_c6ac59f6/formal_c6ac59f6_bmc] engine_0: smtbmc
+SBY 14:55:25 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_c6ac59f6/formal_c6ac59f6_bmc] base: starting process &quot;cd /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_c6ac59f6/formal_c6ac59f6_bmc/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 14:55:25 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_c6ac59f6/formal_c6ac59f6_bmc] base: formal_c6ac59f6_monitor.sv:179: ERROR: syntax error, unexpected '['
+SBY 14:55:25 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_c6ac59f6/formal_c6ac59f6_bmc] base: finished (returncode=1)
+SBY 14:55:25 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_c6ac59f6/formal_c6ac59f6_bmc] base: task failed. ERROR.
+SBY 14:55:25 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_c6ac59f6/formal_c6ac59f6_bmc] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 14:55:25 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_c6ac59f6/formal_c6ac59f6_bmc] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 14:55:25 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_c6ac59f6/formal_c6ac59f6_bmc] summary: engine_0 (smtbmc) did not return a status
+SBY 14:55:25 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_c6ac59f6/formal_c6ac59f6_bmc] summary: engine_0 did not produce any traces
+SBY 14:55:25 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_c6ac59f6/formal_c6ac59f6_bmc] DONE (ERROR, rc=16)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

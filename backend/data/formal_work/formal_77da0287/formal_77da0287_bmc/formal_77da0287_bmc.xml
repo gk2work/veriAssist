@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-04-06T16:07:59" hostname="Gautams-MacBook-Pro.local" package="formal_77da0287" id="0" name="bmc" tests="1" errors="1" failures="0" time="0" skipped="0">
+<properties>
+<property name="os" value="Darwin"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="ERROR"/>
+</properties>
+<testcase classname="bmc" name="bmc" time="0">
+<error type="ERROR"/>
+</testcase>
+<system-out>SBY 16:07:58 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc] Removing directory '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc'.
+SBY 16:07:58 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc] Copy '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/src/dut.sv' to '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc/src/dut.sv'.
+SBY 16:07:58 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc] Copy '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/src/fifo_formal_checker_monitor.sv' to '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc/src/fifo_formal_checker_monitor.sv'.
+SBY 16:07:58 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc] Copy '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/src/formal_wrapper.sv' to '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc/src/formal_wrapper.sv'.
+SBY 16:07:58 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc] engine_0: smtbmc
+SBY 16:07:58 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc] base: starting process &quot;cd /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 16:07:59 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc] base: fifo_formal_checker_monitor.sv:26: ERROR: syntax error, unexpected '&gt;'
+SBY 16:07:59 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc] base: finished (returncode=1)
+SBY 16:07:59 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc] base: task failed. ERROR.
+SBY 16:07:59 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 16:07:59 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 16:07:59 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc] summary: engine_0 (smtbmc) did not return a status
+SBY 16:07:59 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc] summary: engine_0 did not produce any traces
+SBY 16:07:59 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_77da0287/formal_77da0287_bmc] DONE (ERROR, rc=16)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

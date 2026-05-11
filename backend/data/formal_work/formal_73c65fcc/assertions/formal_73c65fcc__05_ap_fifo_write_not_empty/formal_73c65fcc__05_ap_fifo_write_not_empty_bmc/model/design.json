@@ -1,0 +1,546 @@
+{
+  "$schema": "https://raw.githubusercontent.com/YosysHQ/yosys/main/misc/jny.schema.json",
+  "generator": "Yosys 0.63+184 (git sha1 240439bdb-dirty, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)",
+  "version": "0.0.1",
+  "invocation": "write_jny -no-connections ../model/design.json ",
+  "features": ["attributes", "properties"],
+  "modules": [
+      {
+        "name": "fifo",
+        "cell_sorts": [
+          {
+            "type": "$check",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "ARGS",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "TRG",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "ap_fifo_write_not_empty",
+                  "attributes": {
+                    "keep": "00000000000000000000000000000001",
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:156.17-156.51"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "cp_fifo_empty_no_read",
+                  "attributes": {
+                    "keep": "00000000000000000000000000000001",
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:225.17-225.57"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assume",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "cp_fifo_full_no_write",
+                  "attributes": {
+                    "keep": "00000000000000000000000000000001",
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:214.17-214.57"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assume",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "wp_fifo_empty",
+                  "attributes": {
+                    "keep": "00000000000000000000000000000001",
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:69.17-69.40"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "cover",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "wp_fifo_full",
+                  "attributes": {
+                    "keep": "00000000000000000000000000000001",
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:58.17-58.39"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "cover",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "wp_fifo_full_after_28",
+                  "attributes": {
+                    "keep": "00000000000000000000000000000001",
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:95.17-95.48"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "cover",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "wp_fifo_full_falling_edge",
+                  "attributes": {
+                    "keep": "00000000000000000000000000000001",
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:80.17-80.52"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "cover",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$mux",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "S",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procmux$103",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:224.17-224.26|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:224.13-225.58"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$105",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:223.13-223.25|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:223.9-226.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$108",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:151.13-151.22|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:151.9-157.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$110",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:155.17-155.69|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:155.13-156.52"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$113",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:151.13-151.22|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:151.9-157.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$116",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:90.13-90.22|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:90.9-96.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000011100"
+                  }
+                },
+                {
+                  "name": "$procmux$118",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:94.17-94.68|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:94.13-95.49"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$121",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:90.13-90.22|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:90.9-96.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$123",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:79.17-79.50|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:79.13-80.53"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$125",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:78.13-78.25|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:78.9-81.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$127",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:68.17-68.33|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:68.13-69.41"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$129",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:67.13-67.25|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:67.9-70.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$131",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:57.17-57.32|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:57.13-58.40"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$133",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:56.13-56.25|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:56.9-59.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$151",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:20.13-20.22|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:20.9-28.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$96",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:213.17-213.25|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:213.13-214.58"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$98",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:212.13-212.25|formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:212.9-215.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$logic_not$formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:214$91",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:214.47-214.56"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:225$95",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:225.47-225.56"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:79$20",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:79.23-79.32"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$dff",
+            "ports": [
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procdff$157",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:150.5-158.8"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$158",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:89.5-97.8"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000011100"
+                  }
+                },
+                {
+                  "name": "$procdff$164",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:19.5-29.8"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_and",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$logic_and$formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:155$70",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:155.17-155.69"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:57$8",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:57.17-57.32"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:68$14",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:68.17-68.33"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:79$21",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:79.23-79.49"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:79$22",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:79.17-79.50"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:94$27",
+                  "attributes": {
+                    "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:94.17-94.68"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "hdlname": "fifo",
+            "top": "00000000000000000000000000000001",
+            "src": "formal_73c65fcc__05_ap_fifo_write_not_empty_monitor.sv:2.1-229.10"
+        }
+      }
+  ]
+}

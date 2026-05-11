@@ -1,0 +1,12 @@
+SBY 15:17:03 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_0c4f874c/formal_0c4f874c_bmc] Removing directory '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_0c4f874c/formal_0c4f874c_bmc'.
+SBY 15:17:03 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_0c4f874c/formal_0c4f874c_bmc] Copy '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_0c4f874c/formal_0c4f874c_monitor.sv' to '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_0c4f874c/formal_0c4f874c_bmc/src/formal_0c4f874c_monitor.sv'.
+SBY 15:17:03 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_0c4f874c/formal_0c4f874c_bmc] engine_0: smtbmc
+SBY 15:17:03 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_0c4f874c/formal_0c4f874c_bmc] base: starting process "cd /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_0c4f874c/formal_0c4f874c_bmc/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 15:17:03 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_0c4f874c/formal_0c4f874c_bmc] base: formal_0c4f874c_monitor.sv:53: ERROR: syntax error, unexpected '|'
+SBY 15:17:03 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_0c4f874c/formal_0c4f874c_bmc] base: finished (returncode=1)
+SBY 15:17:03 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_0c4f874c/formal_0c4f874c_bmc] base: task failed. ERROR.
+SBY 15:17:03 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_0c4f874c/formal_0c4f874c_bmc] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 15:17:03 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_0c4f874c/formal_0c4f874c_bmc] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 15:17:03 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_0c4f874c/formal_0c4f874c_bmc] summary: engine_0 (smtbmc) did not return a status
+SBY 15:17:03 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_0c4f874c/formal_0c4f874c_bmc] summary: engine_0 did not produce any traces
+SBY 15:17:03 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_0c4f874c/formal_0c4f874c_bmc] DONE (ERROR, rc=16)

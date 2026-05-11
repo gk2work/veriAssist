@@ -1,0 +1,27 @@
+initial
+assume (= [$auto$async2sync.cc:107:execute$126] false)
+assume (= [$auto$async2sync.cc:116:execute$130] true)
+assume (= [full_prev] false)
+assume (= [wr_en_past1] false)
+
+state 0
+assume (= [clk] false)
+assume (= [count] #b0000)
+assume (= [empty] false)
+assume (= [full] true)
+assume (= [rd_data] #b00000000)
+assume (= [rd_en] false)
+assume (= [rst_n] true)
+assume (= [wr_data] #b00000000)
+assume (= [wr_en] false)
+
+state 1
+assume (= [clk] false)
+assume (= [count] #b0000)
+assume (= [empty] false)
+assume (= [full] false)
+assume (= [rd_data] #b00000000)
+assume (= [rd_en] false)
+assume (= [rst_n] false)
+assume (= [wr_data] #b00000000)
+assume (= [wr_en] false)

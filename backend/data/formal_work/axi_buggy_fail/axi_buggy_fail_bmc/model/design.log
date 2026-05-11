@@ -1,0 +1,406 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.63+184 (git sha1 240439bdb-dirty, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: axi_buggy_fail.sv
+Parsing formal SystemVerilog input from `axi_buggy_fail.sv' to AST representation.
+Storing AST representation for module `$abstract\axi_slave'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: axi_formal_checker_monitor.sv
+Parsing formal SystemVerilog input from `axi_formal_checker_monitor.sv' to AST representation.
+Storing AST representation for module `$abstract\axi_formal_checker'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: formal_wrapper.sv
+Parsing formal SystemVerilog input from `formal_wrapper.sv' to AST representation.
+Storing AST representation for module `$abstract\formal_wrapper'.
+Successfully finished Verilog frontend.
+
+4. Executing PREP pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+
+4.2. Executing AST frontend in derive mode using pre-parsed AST for module `\formal_wrapper'.
+Generating RTLIL representation for module `\formal_wrapper'.
+
+4.2.1. Analyzing design hierarchy..
+Top module:  \formal_wrapper
+
+4.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\axi_formal_checker'.
+Generating RTLIL representation for module `\axi_formal_checker'.
+
+4.2.3. Executing AST frontend in derive mode using pre-parsed AST for module `\axi_slave'.
+Generating RTLIL representation for module `\axi_slave'.
+
+4.2.4. Analyzing design hierarchy..
+Top module:  \formal_wrapper
+Used module:     \axi_formal_checker
+Used module:     \axi_slave
+
+4.2.5. Analyzing design hierarchy..
+Top module:  \formal_wrapper
+Used module:     \axi_formal_checker
+Used module:     \axi_slave
+Removing unused module `$abstract\formal_wrapper'.
+Removing unused module `$abstract\axi_formal_checker'.
+Removing unused module `$abstract\axi_slave'.
+Removed 3 unused modules.
+Module axi_formal_checker directly or indirectly contains formal properties -> setting "keep" attribute.
+Module formal_wrapper directly or indirectly contains formal properties -> setting "keep" attribute.
+
+4.3. Executing PROC pass (convert processes to netlists).
+
+4.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$axi_buggy_fail.sv:8$15 in module axi_slave.
+Marked 1 switch rules as full_case in process $proc$axi_formal_checker_monitor.sv:12$9 in module axi_formal_checker.
+Removed a total of 0 dead cases.
+
+4.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 1 assignment to connection.
+
+4.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\formal_wrapper.$proc$formal_wrapper.sv:30$8'.
+  Set init value: \_va_past_valid = 1'0
+
+4.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~5 debug messages>
+
+4.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\axi_slave.$proc$axi_buggy_fail.sv:8$15'.
+     1/1: $0\awready[0:0]
+Creating decoders for process `\axi_formal_checker.$proc$axi_formal_checker_monitor.sv:12$9'.
+     1/2: $0\_va_assert_must_respond_triggered_1[0:0]
+     2/2: \assert_must_respond_EN
+Creating decoders for process `\formal_wrapper.$proc$formal_wrapper.sv:30$8'.
+Creating decoders for process `\formal_wrapper.$proc$formal_wrapper.sv:31$4'.
+     1/1: $assume$formal_wrapper.sv:33$6_EN
+Creating decoders for process `\formal_wrapper.$proc$formal_wrapper.sv:26$2'.
+     1/1: $0\_va_past_valid[0:0]
+
+4.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\axi_slave.\awready' using process `\axi_slave.$proc$axi_buggy_fail.sv:8$15'.
+  created $dff cell `$procdff$31' with positive edge clock.
+Creating register for signal `\axi_formal_checker.\_va_assert_must_respond_triggered_1' using process `\axi_formal_checker.$proc$axi_formal_checker_monitor.sv:12$9'.
+  created $dff cell `$procdff$32' with positive edge clock.
+Creating register for signal `\formal_wrapper.\_va_past_valid' using process `\formal_wrapper.$proc$formal_wrapper.sv:26$2'.
+  created $dff cell `$procdff$33' with positive edge clock.
+
+4.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\axi_slave.$proc$axi_buggy_fail.sv:8$15'.
+Removing empty process `axi_slave.$proc$axi_buggy_fail.sv:8$15'.
+Found and cleaned up 2 empty switches in `\axi_formal_checker.$proc$axi_formal_checker_monitor.sv:12$9'.
+Removing empty process `axi_formal_checker.$proc$axi_formal_checker_monitor.sv:12$9'.
+Removing empty process `formal_wrapper.$proc$formal_wrapper.sv:30$8'.
+Found and cleaned up 1 empty switch in `\formal_wrapper.$proc$formal_wrapper.sv:31$4'.
+Removing empty process `formal_wrapper.$proc$formal_wrapper.sv:31$4'.
+Found and cleaned up 1 empty switch in `\formal_wrapper.$proc$formal_wrapper.sv:26$2'.
+Removing empty process `formal_wrapper.$proc$formal_wrapper.sv:26$2'.
+Cleaned up 5 empty switches.
+
+4.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_slave.
+Optimizing module axi_formal_checker.
+<suppressed ~3 debug messages>
+Optimizing module formal_wrapper.
+<suppressed ~2 debug messages>
+
+4.4. Executing FUTURE pass.
+
+4.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_slave.
+Optimizing module axi_formal_checker.
+Optimizing module formal_wrapper.
+
+4.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_slave..
+Finding unused cells or wires in module \axi_formal_checker..
+Finding unused cells or wires in module \formal_wrapper..
+Removed 4 unused cells and 17 unused wires.
+<suppressed ~7 debug messages>
+
+4.7. Executing CHECK pass (checking for obvious problems).
+Checking module axi_slave...
+Checking module axi_formal_checker...
+Checking module formal_wrapper...
+Found and reported 0 problems.
+
+4.8. Executing OPT pass (performing simple optimizations).
+
+4.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_slave.
+Optimizing module axi_formal_checker.
+Optimizing module formal_wrapper.
+
+4.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_slave'.
+Computing hashes of 1 cells of `\axi_slave'.
+Finding duplicate cells in `\axi_slave'.
+Finding identical cells in module `\axi_formal_checker'.
+Computing hashes of 7 cells of `\axi_formal_checker'.
+Finding duplicate cells in `\axi_formal_checker'.
+Finding identical cells in module `\formal_wrapper'.
+Computing hashes of 8 cells of `\formal_wrapper'.
+Finding duplicate cells in `\formal_wrapper'.
+Removed a total of 0 cells.
+
+4.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_slave..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \axi_formal_checker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \formal_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port B of cell $procmux$29: \_va_past_valid -> 1'1
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~9 debug messages>
+
+4.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_slave.
+  Optimizing cells in module \axi_formal_checker.
+  Optimizing cells in module \formal_wrapper.
+  Optimizing cells in module \formal_wrapper.
+Performed a total of 1 changes.
+
+4.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_slave'.
+Computing hashes of 1 cells of `\axi_slave'.
+Finding duplicate cells in `\axi_slave'.
+Finding identical cells in module `\axi_formal_checker'.
+Computing hashes of 7 cells of `\axi_formal_checker'.
+Finding duplicate cells in `\axi_formal_checker'.
+Finding identical cells in module `\formal_wrapper'.
+Computing hashes of 7 cells of `\formal_wrapper'.
+Finding duplicate cells in `\formal_wrapper'.
+Removed a total of 0 cells.
+
+4.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_slave..
+Finding unused cells or wires in module \axi_formal_checker..
+Finding unused cells or wires in module \formal_wrapper..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_slave.
+Optimizing module axi_formal_checker.
+Optimizing module formal_wrapper.
+
+4.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_slave..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \axi_formal_checker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \formal_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+4.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_slave.
+  Optimizing cells in module \axi_formal_checker.
+  Optimizing cells in module \formal_wrapper.
+Performed a total of 0 changes.
+
+4.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_slave'.
+Computing hashes of 1 cells of `\axi_slave'.
+Finding duplicate cells in `\axi_slave'.
+Finding identical cells in module `\axi_formal_checker'.
+Computing hashes of 7 cells of `\axi_formal_checker'.
+Finding duplicate cells in `\axi_formal_checker'.
+Finding identical cells in module `\formal_wrapper'.
+Computing hashes of 7 cells of `\formal_wrapper'.
+Finding duplicate cells in `\formal_wrapper'.
+Removed a total of 0 cells.
+
+4.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_slave..
+Finding unused cells or wires in module \axi_formal_checker..
+Finding unused cells or wires in module \formal_wrapper..
+
+4.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_slave.
+Optimizing module axi_formal_checker.
+Optimizing module formal_wrapper.
+
+4.8.14. Finished fast OPT passes. (There is nothing left to do.)
+
+4.9. Executing WREDUCE pass (reducing word size of cells).
+
+4.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_slave..
+Finding unused cells or wires in module \axi_formal_checker..
+Finding unused cells or wires in module \formal_wrapper..
+
+4.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.12. Executing OPT pass (performing simple optimizations).
+
+4.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_slave.
+Optimizing module axi_formal_checker.
+Optimizing module formal_wrapper.
+
+4.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_slave'.
+Computing hashes of 1 cells of `\axi_slave'.
+Finding duplicate cells in `\axi_slave'.
+Finding identical cells in module `\axi_formal_checker'.
+Computing hashes of 7 cells of `\axi_formal_checker'.
+Finding duplicate cells in `\axi_formal_checker'.
+Finding identical cells in module `\formal_wrapper'.
+Computing hashes of 7 cells of `\formal_wrapper'.
+Finding duplicate cells in `\formal_wrapper'.
+Removed a total of 0 cells.
+
+4.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_slave..
+Finding unused cells or wires in module \axi_formal_checker..
+Finding unused cells or wires in module \formal_wrapper..
+
+4.12.4. Finished fast OPT passes.
+
+4.13. Executing SORT pass.
+
+4.14. Printing statistics.
+
+=== axi_formal_checker ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+       10 wire bits
+        6 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        7 cells
+        1   $check
+        1   $dff
+        1   $logic_and
+        1   $logic_not
+        3   $mux
+
+=== axi_slave ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        4 wires
+        4 wire bits
+        4 public wires
+        4 public wire bits
+        4 ports
+        4 port bits
+        1 cells
+        1   $dff
+
+=== formal_wrapper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        7 wire bits
+        5 public wires
+        5 public wire bits
+        2 ports
+        2 port bits
+        5 cells
+        1   $anyseq
+        1   $check
+        1   $dff
+        1   $logic_not
+        1   $mux
+        2 submodules
+        1   axi_formal_checker
+        1   axi_slave
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+       13 formal_wrapper
+        7 axi_formal_checker
+        1 axi_slave
+
+        +----------Count including submodules.
+        | 
+       21 wires
+       21 wire bits
+       15 public wires
+       15 public wire bits
+       10 ports
+       10 port bits
+        - memories
+        - memory bits
+        - processes
+       13 cells
+        1   $anyseq
+        2   $check
+        3   $dff
+        1   $logic_and
+        2   $logic_not
+        4   $mux
+        2 submodules
+        1   axi_formal_checker
+        1   axi_slave
+
+4.15. Executing CHECK pass (checking for obvious problems).
+Checking module axi_formal_checker...
+Checking module axi_slave...
+Checking module formal_wrapper...
+Found and reported 0 problems.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `formal_wrapper'. Setting top module to formal_wrapper.
+
+5.1. Analyzing design hierarchy..
+Top module:  \formal_wrapper
+Used module:     \axi_slave
+Used module:     \axi_formal_checker
+
+5.2. Analyzing design hierarchy..
+Top module:  \formal_wrapper
+Used module:     \axi_slave
+Used module:     \axi_formal_checker
+Removed 0 unused modules.
+Module axi_formal_checker directly or indirectly contains formal properties -> setting "keep" attribute.
+Module formal_wrapper directly or indirectly contains formal properties -> setting "keep" attribute.
+
+6. Executing jny backend.
+
+7. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 566fd01782, time: 0.00s, user: 0.01s, system: 0.01s, MEM: 15.98 MB peak
+Yosys 0.63+184 (git sha1 240439bdb-dirty, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
+Time spent: 19% 4x opt_merge (0 sec), 12% 6x read_verilog (0 sec), ...

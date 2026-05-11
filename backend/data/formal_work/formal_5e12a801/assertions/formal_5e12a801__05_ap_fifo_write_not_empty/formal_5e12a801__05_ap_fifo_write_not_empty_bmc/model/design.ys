@@ -1,0 +1,10 @@
+# running in /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_5e12a801/assertions/formal_5e12a801__05_ap_fifo_write_not_empty/formal_5e12a801__05_ap_fifo_write_not_empty_bmc/src/
+read -formal dut.sv
+read -formal fifo_sva_monitor.sv
+read -formal formal_wrapper.sv
+prep -top formal_wrapper
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

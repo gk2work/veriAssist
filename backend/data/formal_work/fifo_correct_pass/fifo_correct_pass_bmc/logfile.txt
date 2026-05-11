@@ -1,0 +1,63 @@
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] Removing directory '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc'.
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] Copy '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/src/fifo_correct_pass.sv' to '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc/src/fifo_correct_pass.sv'.
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] Copy '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/src/fifo_formal_checker_monitor.sv' to '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc/src/fifo_formal_checker_monitor.sv'.
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] Copy '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/src/formal_wrapper.sv' to '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc/src/formal_wrapper.sv'.
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: smtbmc
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] base: starting process "cd /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] base: Warning: Resizing cell port formal_wrapper.u_monitor.count from 8 bits to 4 bits.
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] base: Warning: Resizing cell port formal_wrapper.u_dut.count from 8 bits to 4 bits.
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] base: finished (returncode=0)
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] prep: starting process "cd /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc/model; yosys -ql design_prep.log design_prep.ys"
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] prep: finished (returncode=0)
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] smt2: starting process "cd /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] smt2: finished (returncode=0)
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: starting process "cd /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc; yosys-smtbmc --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Solver: yices
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 0..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 1..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 1..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 2..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 2..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 3..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 3..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 4..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 4..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 5..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 5..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 6..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 6..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 7..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 7..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 8..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 8..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 9..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 9..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 10..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 10..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 11..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 11..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 12..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 12..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 13..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 13..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 14..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 14..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 15..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 15..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 16..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 16..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 17..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 17..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 18..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 18..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assumptions in step 19..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Checking assertions in step 19..
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: ##   0:00:00  Status: passed
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: finished (returncode=0)
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] engine_0: Status returned by engine: pass
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] summary: engine_0 (smtbmc) returned pass
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] summary: engine_0 did not produce any traces
+SBY  6:16:28 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fifo_correct_pass/fifo_correct_pass_bmc] DONE (PASS, rc=0)

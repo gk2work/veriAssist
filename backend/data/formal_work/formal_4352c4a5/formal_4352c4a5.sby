@@ -1,0 +1,21 @@
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+bmc: depth 18
+bmc: timeout 300
+
+[engines]
+smtbmc boolector
+
+[script]
+read -formal dut.sv
+read -formal fifo_formal_checker_monitor.sv
+read -formal formal_wrapper.sv
+prep -top formal_wrapper
+
+[files]
+dut.sv src/dut.sv
+fifo_formal_checker_monitor.sv src/fifo_formal_checker_monitor.sv
+formal_wrapper.sv src/formal_wrapper.sv

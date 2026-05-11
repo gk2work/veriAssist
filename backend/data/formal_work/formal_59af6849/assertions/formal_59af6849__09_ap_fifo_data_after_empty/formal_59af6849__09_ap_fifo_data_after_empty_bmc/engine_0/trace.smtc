@@ -1,0 +1,33 @@
+initial
+assume (= [_va_past_valid] false)
+assume (= [u_dut._witness_.anyinit_procdff_401] #b00000000)
+assume (= [u_dut._witness_.anyinit_procdff_406] false)
+assume (= [u_dut._witness_.anyinit_procdff_411] #b00000)
+assume (= [u_dut._witness_.anyinit_procdff_416] false)
+assume (= [u_dut._witness_.anyinit_procdff_422] #b00000)
+assume (= [u_dut.mem] #b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
+assume (= [u_monitor.$auto$async2sync.cc:107:execute$459] false)
+assume (= [u_monitor.$auto$async2sync.cc:116:execute$463] true)
+assume (= [u_monitor._va_ap_fifo_data_after_empty_stage_6] false)
+assume (= [u_monitor._va_ap_fifo_data_after_empty_trig_7] false)
+assume (= [u_monitor.wr_data_in_past1] #b10000000)
+
+state 0
+assume (= [clk] false)
+assume (= [rst_n] false)
+
+state 1
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 2
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 3
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 4
+assume (= [clk] false)
+assume (= [rst_n] false)

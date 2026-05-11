@@ -1,0 +1,21 @@
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+bmc: depth 20
+bmc: timeout 300
+
+[engines]
+smtbmc boolector
+
+[script]
+read -formal fifo1.sv
+read -formal fifo_sva_monitor.sv
+read -formal formal_wrapper.sv
+prep -top formal_wrapper
+
+[files]
+fifo1.sv src/fifo1.sv
+fifo_sva_monitor.sv src/fifo_sva_monitor.sv
+formal_wrapper.sv src/formal_wrapper.sv

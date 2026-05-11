@@ -1,0 +1,8 @@
+# running in /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_1e80d755/formal_1e80d755_bmc/src/
+read -formal formal_1e80d755_monitor.sv
+prep -top fifo_checker
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

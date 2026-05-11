@@ -1,0 +1,8 @@
+# running in /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_f036e8c3/assertions/formal_f036e8c3__08_assert_full_rise/formal_f036e8c3__08_assert_full_rise_bmc/src/
+read -formal formal_f036e8c3__08_assert_full_rise_monitor.sv
+prep -top fifo_checker
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

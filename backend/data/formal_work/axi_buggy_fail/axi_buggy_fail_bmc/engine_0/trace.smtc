@@ -1,0 +1,22 @@
+initial
+assume (= [_va_past_valid] false)
+assume (= [u_dut.awready] false)
+assume (= [u_monitor.$auto$async2sync.cc:107:execute$34] false)
+assume (= [u_monitor.$auto$async2sync.cc:116:execute$38] true)
+assume (= [u_monitor._va_assert_must_respond_triggered_1] false)
+
+state 0
+assume (= [clk] false)
+assume (= [rst_n] false)
+
+state 1
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 2
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 3
+assume (= [clk] false)
+assume (= [rst_n] false)

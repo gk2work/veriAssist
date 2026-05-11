@@ -1,0 +1,475 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.63+184 (git sha1 240439bdb-dirty, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: fifo_correct_pass.sv
+Parsing formal SystemVerilog input from `fifo_correct_pass.sv' to AST representation.
+Storing AST representation for module `$abstract\sync_fifo'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: fifo_formal_checker_monitor.sv
+Parsing formal SystemVerilog input from `fifo_formal_checker_monitor.sv' to AST representation.
+Storing AST representation for module `$abstract\fifo_formal_checker'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: formal_wrapper.sv
+Parsing formal SystemVerilog input from `formal_wrapper.sv' to AST representation.
+Storing AST representation for module `$abstract\formal_wrapper'.
+Successfully finished Verilog frontend.
+
+4. Executing PREP pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+
+4.2. Executing AST frontend in derive mode using pre-parsed AST for module `\formal_wrapper'.
+Generating RTLIL representation for module `\formal_wrapper'.
+
+4.2.1. Analyzing design hierarchy..
+Top module:  \formal_wrapper
+
+4.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\fifo_formal_checker'.
+Generating RTLIL representation for module `\fifo_formal_checker'.
+
+4.2.3. Executing AST frontend in derive mode using pre-parsed AST for module `\sync_fifo'.
+Generating RTLIL representation for module `\sync_fifo'.
+
+4.2.4. Analyzing design hierarchy..
+Top module:  \formal_wrapper
+Used module:     \fifo_formal_checker
+Used module:     \sync_fifo
+
+4.2.5. Analyzing design hierarchy..
+Top module:  \formal_wrapper
+Used module:     \fifo_formal_checker
+Used module:     \sync_fifo
+Removing unused module `$abstract\formal_wrapper'.
+Removing unused module `$abstract\fifo_formal_checker'.
+Removing unused module `$abstract\sync_fifo'.
+Removed 3 unused modules.
+Module fifo_formal_checker directly or indirectly contains formal properties -> setting "keep" attribute.
+Module formal_wrapper directly or indirectly contains formal properties -> setting "keep" attribute.
+Warning: Resizing cell port formal_wrapper.u_monitor.count from 8 bits to 4 bits.
+Warning: Resizing cell port formal_wrapper.u_dut.count from 8 bits to 4 bits.
+
+4.3. Executing PROC pass (convert processes to netlists).
+
+4.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$fifo_correct_pass.sv:21$24 in module sync_fifo.
+Removed a total of 0 dead cases.
+
+4.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 4 assignments to connections.
+
+4.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\formal_wrapper.$proc$formal_wrapper.sv:43$10'.
+  Set init value: \_va_past_valid = 1'0
+
+4.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~8 debug messages>
+
+4.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\sync_fifo.$proc$fifo_correct_pass.sv:21$24'.
+     1/10: $2$memwr$\mem$fifo_correct_pass.sv:29$21_EN[7:0]$36
+     2/10: $2$memwr$\mem$fifo_correct_pass.sv:29$21_DATA[7:0]$35
+     3/10: $2$memwr$\mem$fifo_correct_pass.sv:29$21_ADDR[2:0]$34
+     4/10: $1$memwr$\mem$fifo_correct_pass.sv:29$21_EN[7:0]$31
+     5/10: $1$memwr$\mem$fifo_correct_pass.sv:29$21_DATA[7:0]$30
+     6/10: $1$memwr$\mem$fifo_correct_pass.sv:29$21_ADDR[2:0]$29
+     7/10: $0\rd_ptr[2:0]
+     8/10: $0\wr_ptr[2:0]
+     9/10: $0\count[3:0]
+    10/10: $0\rd_data[7:0]
+Creating decoders for process `\fifo_formal_checker.$proc$fifo_formal_checker_monitor.sv:22$15'.
+     1/1: \cover_count_bounded_EN
+Creating decoders for process `\fifo_formal_checker.$proc$fifo_formal_checker_monitor.sv:14$11'.
+     1/1: \assert_count_bounded_EN
+Creating decoders for process `\formal_wrapper.$proc$formal_wrapper.sv:43$10'.
+Creating decoders for process `\formal_wrapper.$proc$formal_wrapper.sv:44$6'.
+     1/1: $assume$formal_wrapper.sv:46$8_EN
+Creating decoders for process `\formal_wrapper.$proc$formal_wrapper.sv:39$4'.
+     1/1: $0\_va_past_valid[0:0]
+
+4.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\sync_fifo.\rd_data' using process `\sync_fifo.$proc$fifo_correct_pass.sv:21$24'.
+  created $dff cell `$procdff$105' with positive edge clock.
+Creating register for signal `\sync_fifo.\count' using process `\sync_fifo.$proc$fifo_correct_pass.sv:21$24'.
+  created $dff cell `$procdff$106' with positive edge clock.
+Creating register for signal `\sync_fifo.\wr_ptr' using process `\sync_fifo.$proc$fifo_correct_pass.sv:21$24'.
+  created $dff cell `$procdff$107' with positive edge clock.
+Creating register for signal `\sync_fifo.\rd_ptr' using process `\sync_fifo.$proc$fifo_correct_pass.sv:21$24'.
+  created $dff cell `$procdff$108' with positive edge clock.
+Creating register for signal `\sync_fifo.$memwr$\mem$fifo_correct_pass.sv:29$21_ADDR' using process `\sync_fifo.$proc$fifo_correct_pass.sv:21$24'.
+  created $dff cell `$procdff$109' with positive edge clock.
+Creating register for signal `\sync_fifo.$memwr$\mem$fifo_correct_pass.sv:29$21_DATA' using process `\sync_fifo.$proc$fifo_correct_pass.sv:21$24'.
+  created $dff cell `$procdff$110' with positive edge clock.
+Creating register for signal `\sync_fifo.$memwr$\mem$fifo_correct_pass.sv:29$21_EN' using process `\sync_fifo.$proc$fifo_correct_pass.sv:21$24'.
+  created $dff cell `$procdff$111' with positive edge clock.
+Creating register for signal `\formal_wrapper.\_va_past_valid' using process `\formal_wrapper.$proc$formal_wrapper.sv:39$4'.
+  created $dff cell `$procdff$112' with positive edge clock.
+
+4.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 3 empty switches in `\sync_fifo.$proc$fifo_correct_pass.sv:21$24'.
+Removing empty process `sync_fifo.$proc$fifo_correct_pass.sv:21$24'.
+Found and cleaned up 2 empty switches in `\fifo_formal_checker.$proc$fifo_formal_checker_monitor.sv:22$15'.
+Removing empty process `fifo_formal_checker.$proc$fifo_formal_checker_monitor.sv:22$15'.
+Found and cleaned up 1 empty switch in `\fifo_formal_checker.$proc$fifo_formal_checker_monitor.sv:14$11'.
+Removing empty process `fifo_formal_checker.$proc$fifo_formal_checker_monitor.sv:14$11'.
+Removing empty process `formal_wrapper.$proc$formal_wrapper.sv:43$10'.
+Found and cleaned up 1 empty switch in `\formal_wrapper.$proc$formal_wrapper.sv:44$6'.
+Removing empty process `formal_wrapper.$proc$formal_wrapper.sv:44$6'.
+Found and cleaned up 1 empty switch in `\formal_wrapper.$proc$formal_wrapper.sv:39$4'.
+Removing empty process `formal_wrapper.$proc$formal_wrapper.sv:39$4'.
+Cleaned up 8 empty switches.
+
+4.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sync_fifo.
+<suppressed ~11 debug messages>
+Optimizing module fifo_formal_checker.
+<suppressed ~3 debug messages>
+Optimizing module formal_wrapper.
+<suppressed ~2 debug messages>
+
+4.4. Executing FUTURE pass.
+
+4.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sync_fifo.
+Optimizing module fifo_formal_checker.
+Optimizing module formal_wrapper.
+
+4.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sync_fifo..
+Finding unused cells or wires in module \fifo_formal_checker..
+Finding unused cells or wires in module \formal_wrapper..
+Removed 8 unused cells and 57 unused wires.
+<suppressed ~11 debug messages>
+
+4.7. Executing CHECK pass (checking for obvious problems).
+Checking module sync_fifo...
+Checking module fifo_formal_checker...
+Checking module formal_wrapper...
+Found and reported 0 problems.
+
+4.8. Executing OPT pass (performing simple optimizations).
+
+4.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sync_fifo.
+Optimizing module fifo_formal_checker.
+Optimizing module formal_wrapper.
+
+4.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sync_fifo'.
+Computing hashes of 34 cells of `\sync_fifo'.
+Finding duplicate cells in `\sync_fifo'.
+Finding identical cells in module `\fifo_formal_checker'.
+Computing hashes of 7 cells of `\fifo_formal_checker'.
+Finding duplicate cells in `\fifo_formal_checker'.
+Computing hashes of 6 cells of `\fifo_formal_checker'.
+Finding duplicate cells in `\fifo_formal_checker'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\formal_wrapper'.
+Computing hashes of 10 cells of `\formal_wrapper'.
+Finding duplicate cells in `\formal_wrapper'.
+Removed a total of 1 cells.
+
+4.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \sync_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$60.
+    dead port 2/2 on $mux $procmux$54.
+    dead port 2/2 on $mux $procmux$48.
+Running muxtree optimizer on module \fifo_formal_checker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \formal_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port B of cell $procmux$103: \_va_past_valid -> 1'1
+  Analyzing evaluation results.
+Removed 3 multiplexer ports.
+<suppressed ~34 debug messages>
+
+4.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \sync_fifo.
+    Consolidated identical input bits for $mux cell $procmux$45:
+      Old ports: A=8'00000000, B=8'11111111, Y=$procmux$45_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$45_Y [0]
+      New connections: $procmux$45_Y [7:1] = { $procmux$45_Y [0] $procmux$45_Y [0] $procmux$45_Y [0] $procmux$45_Y [0] $procmux$45_Y [0] $procmux$45_Y [0] $procmux$45_Y [0] }
+  Optimizing cells in module \sync_fifo.
+    Consolidated identical input bits for $mux cell $procmux$63:
+      Old ports: A=8'00000000, B=$2$memwr$\mem$fifo_correct_pass.sv:29$21_EN[7:0]$36, Y=$0$memwr$\mem$fifo_correct_pass.sv:29$21_EN[7:0]$27
+      New ports: A=1'0, B=$procmux$45_Y [0], Y=$0$memwr$\mem$fifo_correct_pass.sv:29$21_EN[7:0]$27 [0]
+      New connections: $0$memwr$\mem$fifo_correct_pass.sv:29$21_EN[7:0]$27 [7:1] = { $0$memwr$\mem$fifo_correct_pass.sv:29$21_EN[7:0]$27 [0] $0$memwr$\mem$fifo_correct_pass.sv:29$21_EN[7:0]$27 [0] $0$memwr$\mem$fifo_correct_pass.sv:29$21_EN[7:0]$27 [0] $0$memwr$\mem$fifo_correct_pass.sv:29$21_EN[7:0]$27 [0] $0$memwr$\mem$fifo_correct_pass.sv:29$21_EN[7:0]$27 [0] $0$memwr$\mem$fifo_correct_pass.sv:29$21_EN[7:0]$27 [0] $0$memwr$\mem$fifo_correct_pass.sv:29$21_EN[7:0]$27 [0] }
+  Optimizing cells in module \sync_fifo.
+  Optimizing cells in module \fifo_formal_checker.
+  Optimizing cells in module \formal_wrapper.
+  Optimizing cells in module \formal_wrapper.
+Performed a total of 3 changes.
+
+4.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sync_fifo'.
+Computing hashes of 31 cells of `\sync_fifo'.
+Finding duplicate cells in `\sync_fifo'.
+Finding identical cells in module `\fifo_formal_checker'.
+Computing hashes of 6 cells of `\fifo_formal_checker'.
+Finding duplicate cells in `\fifo_formal_checker'.
+Finding identical cells in module `\formal_wrapper'.
+Computing hashes of 9 cells of `\formal_wrapper'.
+Finding duplicate cells in `\formal_wrapper'.
+Removed a total of 0 cells.
+
+4.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sync_fifo..
+Finding unused cells or wires in module \fifo_formal_checker..
+Finding unused cells or wires in module \formal_wrapper..
+Removed 0 unused cells and 5 unused wires.
+<suppressed ~3 debug messages>
+
+4.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sync_fifo.
+Optimizing module fifo_formal_checker.
+Optimizing module formal_wrapper.
+
+4.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \sync_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \fifo_formal_checker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \formal_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~29 debug messages>
+
+4.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \sync_fifo.
+  Optimizing cells in module \fifo_formal_checker.
+  Optimizing cells in module \formal_wrapper.
+Performed a total of 0 changes.
+
+4.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sync_fifo'.
+Computing hashes of 31 cells of `\sync_fifo'.
+Finding duplicate cells in `\sync_fifo'.
+Finding identical cells in module `\fifo_formal_checker'.
+Computing hashes of 6 cells of `\fifo_formal_checker'.
+Finding duplicate cells in `\fifo_formal_checker'.
+Finding identical cells in module `\formal_wrapper'.
+Computing hashes of 9 cells of `\formal_wrapper'.
+Finding duplicate cells in `\formal_wrapper'.
+Removed a total of 0 cells.
+
+4.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sync_fifo..
+Finding unused cells or wires in module \fifo_formal_checker..
+Finding unused cells or wires in module \formal_wrapper..
+
+4.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sync_fifo.
+Optimizing module fifo_formal_checker.
+Optimizing module formal_wrapper.
+
+4.8.14. Finished fast OPT passes. (There is nothing left to do.)
+
+4.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell sync_fifo.$add$fifo_correct_pass.sv:30$37 ($add).
+Removed top 29 bits (of 32) from port Y of cell sync_fifo.$add$fifo_correct_pass.sv:30$37 ($add).
+Removed top 31 bits (of 32) from port B of cell sync_fifo.$add$fifo_correct_pass.sv:31$38 ($add).
+Removed top 28 bits (of 32) from port Y of cell sync_fifo.$add$fifo_correct_pass.sv:31$38 ($add).
+Removed top 31 bits (of 32) from port B of cell sync_fifo.$add$fifo_correct_pass.sv:35$42 ($add).
+Removed top 29 bits (of 32) from port Y of cell sync_fifo.$add$fifo_correct_pass.sv:35$42 ($add).
+Removed top 31 bits (of 32) from port B of cell sync_fifo.$sub$fifo_correct_pass.sv:36$43 ($sub).
+Removed top 28 bits (of 32) from port Y of cell sync_fifo.$sub$fifo_correct_pass.sv:36$43 ($sub).
+Removed top 28 bits (of 32) from wire sync_fifo.$add$fifo_correct_pass.sv:31$38_Y.
+Removed top 29 bits (of 32) from wire sync_fifo.$add$fifo_correct_pass.sv:30$37_Y.
+Removed top 29 bits (of 32) from wire sync_fifo.$add$fifo_correct_pass.sv:35$42_Y.
+Removed top 28 bits (of 32) from wire sync_fifo.$sub$fifo_correct_pass.sv:36$43_Y.
+Removed top 28 bits (of 32) from port B of cell fifo_formal_checker.$le$fifo_formal_checker_monitor.sv:24$18 ($le).
+Removed top 4 bits (of 8) from wire formal_wrapper.count.
+
+4.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sync_fifo..
+Finding unused cells or wires in module \fifo_formal_checker..
+Finding unused cells or wires in module \formal_wrapper..
+Removed 0 unused cells and 5 unused wires.
+<suppressed ~2 debug messages>
+
+4.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.12. Executing OPT pass (performing simple optimizations).
+
+4.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sync_fifo.
+Optimizing module fifo_formal_checker.
+Optimizing module formal_wrapper.
+
+4.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sync_fifo'.
+Computing hashes of 30 cells of `\sync_fifo'.
+Finding duplicate cells in `\sync_fifo'.
+Finding identical cells in module `\fifo_formal_checker'.
+Computing hashes of 6 cells of `\fifo_formal_checker'.
+Finding duplicate cells in `\fifo_formal_checker'.
+Finding identical cells in module `\formal_wrapper'.
+Computing hashes of 9 cells of `\formal_wrapper'.
+Finding duplicate cells in `\formal_wrapper'.
+Removed a total of 0 cells.
+
+4.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sync_fifo..
+Finding unused cells or wires in module \fifo_formal_checker..
+Finding unused cells or wires in module \formal_wrapper..
+
+4.12.4. Finished fast OPT passes.
+
+4.13. Executing SORT pass.
+
+4.14. Printing statistics.
+
+=== fifo_formal_checker ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       11 wires
+       14 wire bits
+        9 public wires
+       12 public wire bits
+        7 ports
+       10 port bits
+        6 cells
+        2   $check
+        1   $le
+        3   $mux
+
+=== formal_wrapper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       12 wires
+       29 wire bits
+       10 public wires
+       27 public wire bits
+        2 ports
+        2 port bits
+        7 cells
+        3   $anyseq
+        1   $check
+        1   $dff
+        1   $logic_not
+        1   $mux
+        2 submodules
+        1   fifo_formal_checker
+        1   sync_fifo
+
+=== sync_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       35 wires
+      164 wire bits
+       11 public wires
+       32 public wire bits
+        9 ports
+       26 port bits
+       30 cells
+        3   $add
+        4   $dff
+        1   $eq
+        2   $logic_and
+        3   $logic_not
+        1   $mem_v2
+       15   $mux
+        1   $sub
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+       43 formal_wrapper
+        6 fifo_formal_checker
+       30 sync_fifo
+
+        +----------Count including submodules.
+        | 
+       58 wires
+      207 wire bits
+       30 public wires
+       71 public wire bits
+       18 ports
+       38 port bits
+        - memories
+        - memory bits
+        - processes
+       43 cells
+        3   $add
+        3   $anyseq
+        3   $check
+        5   $dff
+        1   $eq
+        1   $le
+        2   $logic_and
+        4   $logic_not
+        1   $mem_v2
+       19   $mux
+        1   $sub
+        2 submodules
+        1   fifo_formal_checker
+        1   sync_fifo
+
+4.15. Executing CHECK pass (checking for obvious problems).
+Checking module fifo_formal_checker...
+Checking module formal_wrapper...
+Checking module sync_fifo...
+Found and reported 0 problems.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `formal_wrapper'. Setting top module to formal_wrapper.
+
+5.1. Analyzing design hierarchy..
+Top module:  \formal_wrapper
+Used module:     \sync_fifo
+Used module:     \fifo_formal_checker
+
+5.2. Analyzing design hierarchy..
+Top module:  \formal_wrapper
+Used module:     \sync_fifo
+Used module:     \fifo_formal_checker
+Removed 0 unused modules.
+Module fifo_formal_checker directly or indirectly contains formal properties -> setting "keep" attribute.
+Module formal_wrapper directly or indirectly contains formal properties -> setting "keep" attribute.
+
+6. Executing jny backend.
+
+7. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+Warnings: 2 unique messages, 2 total
+End of script. Logfile hash: d7cbc806bf, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 17.30 MB peak
+Yosys 0.63+184 (git sha1 240439bdb-dirty, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
+Time spent: 17% 5x opt_clean (0 sec), 14% 2x hierarchy (0 sec), ...

@@ -1,0 +1,10 @@
+# running in /Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_da13696c/assertions/fv_da13696c__01__auto_assert_fifo_not_full_empty/fv_da13696c__01__auto_assert_fifo_not_full_empty_bmc/src/
+read -formal fifo1.sv
+read -formal fifo_sva_monitor.sv
+read -formal formal_wrapper.sv
+prep -top formal_wrapper
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

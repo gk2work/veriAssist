@@ -1,0 +1,16 @@
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+bmc: depth 20
+
+[engines]
+smtbmc
+
+[script]
+read -formal formal_73c65fcc__07_ap_fifo_read_write_equal_monitor.sv
+prep -top fifo
+
+[files]
+formal_73c65fcc__07_ap_fifo_read_write_equal_monitor.sv

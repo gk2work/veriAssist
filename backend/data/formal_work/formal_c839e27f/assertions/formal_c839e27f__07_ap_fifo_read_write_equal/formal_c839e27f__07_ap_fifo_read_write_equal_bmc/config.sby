@@ -1,0 +1,18 @@
+[options]
+mode bmc
+depth 20
+timeout 300
+
+[engines]
+smtbmc
+
+[script]
+read -formal dut.sv
+read -formal fifo_sva_monitor.sv
+read -formal formal_wrapper.sv
+prep -top formal_wrapper
+
+[files]
+dut.sv src/dut.sv
+fifo_sva_monitor.sv src/fifo_sva_monitor.sv
+formal_wrapper.sv src/formal_wrapper.sv

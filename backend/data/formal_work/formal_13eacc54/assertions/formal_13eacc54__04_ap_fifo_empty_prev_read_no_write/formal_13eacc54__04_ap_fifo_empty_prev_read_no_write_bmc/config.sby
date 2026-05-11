@@ -1,0 +1,13 @@
+[options]
+mode bmc
+depth 20
+
+[engines]
+smtbmc
+
+[script]
+read -formal formal_13eacc54__04_ap_fifo_empty_prev_read_no_write_monitor.sv
+prep -top fifo
+
+[files]
+formal_13eacc54__04_ap_fifo_empty_prev_read_no_write_monitor.sv

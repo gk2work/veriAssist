@@ -1,0 +1,13 @@
+[options]
+mode bmc
+depth 20
+
+[engines]
+smtbmc
+
+[script]
+read -formal formal_13eacc54__07_ap_fifo_read_write_equal_monitor.sv
+prep -top fifo
+
+[files]
+formal_13eacc54__07_ap_fifo_read_write_equal_monitor.sv

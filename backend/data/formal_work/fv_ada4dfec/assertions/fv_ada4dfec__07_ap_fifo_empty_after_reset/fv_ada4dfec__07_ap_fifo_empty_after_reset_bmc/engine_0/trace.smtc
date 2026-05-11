@@ -1,0 +1,32 @@
+initial
+assume (= [_va_past_valid] false)
+assume (= [u_dut._witness_.anyinit_procdff_212] #b0000)
+assume (= [u_dut._witness_.anyinit_procdff_217] #b0000)
+assume (= [u_dut.mem[0]] #b00000000)
+assume (= [u_dut.mem[1]] #b00000000)
+assume (= [u_dut.mem[2]] #b00000000)
+assume (= [u_dut.mem[3]] #b00000000)
+assume (= [u_dut.mem[4]] #b00000000)
+assume (= [u_dut.mem[5]] #b00000000)
+assume (= [u_dut.mem[6]] #b00000000)
+assume (= [u_dut.mem[7]] #b00000000)
+assume (= [u_monitor.$auto$async2sync.cc:107:execute$286] false)
+assume (= [u_monitor.$auto$async2sync.cc:116:execute$290] true)
+assume (= [u_monitor._va_ap_fifo_empty_after_reset_triggered_6] false)
+assume (= [u_monitor.reset_n_prev] false)
+
+state 0
+assume (= [clk] false)
+assume (= [rst_n] false)
+
+state 1
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 2
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 3
+assume (= [clk] false)
+assume (= [rst_n] false)

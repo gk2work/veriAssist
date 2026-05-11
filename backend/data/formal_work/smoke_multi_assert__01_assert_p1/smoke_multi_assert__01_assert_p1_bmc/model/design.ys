@@ -1,0 +1,8 @@
+# running in /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/smoke_multi_assert__01_assert_p1/smoke_multi_assert__01_assert_p1_bmc/src/
+read -formal smoke_multi_assert__01_assert_p1_monitor.sv
+prep -top mini_checker
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

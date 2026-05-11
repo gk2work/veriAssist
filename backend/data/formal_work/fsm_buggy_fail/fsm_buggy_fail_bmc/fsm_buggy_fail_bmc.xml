@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-04-02T06:06:22" hostname="Gautams-MacBook-Pro.local" package="fsm_buggy_fail" id="0" name="bmc" tests="2" errors="0" failures="0" time="0" skipped="1">
+<properties>
+<property name="os" value="Darwin"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="PASS"/>
+</properties>
+<testcase classname="bmc" name="build execution" time="0">
+</testcase>
+<testcase classname="bmc" name="Property ASSERT in formal_wrapper/u_monitor at fsm_formal_checker_monitor.sv:12.13-12.53" time="0" type="ASSERT" location="fsm_formal_checker_monitor.sv:12.13-12.53" id="assert_legal_state">
+</testcase>
+<testcase classname="bmc" name="Property COVER in formal_wrapper/u_monitor at fsm_formal_checker_monitor.sv:20.31-20.58" time="0" type="COVER" location="fsm_formal_checker_monitor.sv:20.31-20.58" id="cover_legal_state">
+<skipped />
+</testcase>
+<system-out>SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] Removing directory '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc'.
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] Copy '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/src/fsm_buggy_fail.sv' to '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc/src/fsm_buggy_fail.sv'.
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] Copy '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/src/fsm_formal_checker_monitor.sv' to '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc/src/fsm_formal_checker_monitor.sv'.
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] Copy '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/src/formal_wrapper.sv' to '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc/src/formal_wrapper.sv'.
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: smtbmc
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] base: starting process &quot;cd /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] base: finished (returncode=0)
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] prep: starting process &quot;cd /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] prep: finished (returncode=0)
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] smt2: starting process &quot;cd /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] smt2: finished (returncode=0)
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: starting process &quot;cd /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc; yosys-smtbmc --presat --unroll --noprogress -t 10  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Solver: yices
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assertions in step 0..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assumptions in step 1..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assertions in step 1..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assumptions in step 2..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assertions in step 2..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assumptions in step 3..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assertions in step 3..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assumptions in step 4..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assertions in step 4..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assumptions in step 5..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assertions in step 5..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assumptions in step 6..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assertions in step 6..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assumptions in step 7..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assertions in step 7..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assumptions in step 8..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assertions in step 8..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assumptions in step 9..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Checking assertions in step 9..
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: ##   0:00:00  Status: passed
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: finished (returncode=0)
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] engine_0: Status returned by engine: pass
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] summary: engine_0 (smtbmc) returned pass
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] summary: engine_0 did not produce any traces
+SBY  6:06:22 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_buggy_fail/fsm_buggy_fail_bmc] DONE (PASS, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

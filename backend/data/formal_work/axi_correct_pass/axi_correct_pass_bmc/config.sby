@@ -1,0 +1,18 @@
+[options]
+mode bmc
+depth 15
+timeout 300
+
+[engines]
+smtbmc
+
+[script]
+read -formal axi_correct_pass.sv
+read -formal axi_formal_checker_monitor.sv
+read -formal formal_wrapper.sv
+prep -top formal_wrapper
+
+[files]
+axi_correct_pass.sv src/axi_correct_pass.sv
+axi_formal_checker_monitor.sv src/axi_formal_checker_monitor.sv
+formal_wrapper.sv src/formal_wrapper.sv

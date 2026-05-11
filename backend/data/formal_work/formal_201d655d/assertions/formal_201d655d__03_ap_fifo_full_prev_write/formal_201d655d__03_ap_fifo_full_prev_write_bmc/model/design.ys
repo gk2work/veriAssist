@@ -1,0 +1,8 @@
+# running in /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_201d655d/assertions/formal_201d655d__03_ap_fifo_full_prev_write/formal_201d655d__03_ap_fifo_full_prev_write_bmc/src/
+read -formal formal_201d655d__03_ap_fifo_full_prev_write_monitor.sv
+prep -top fifo
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

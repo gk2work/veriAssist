@@ -1,0 +1,140 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.63+184 (git sha1 240439bdb-dirty, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `formal_wrapper'. Setting top module to formal_wrapper.
+
+2.1. Analyzing design hierarchy..
+Top module:  \formal_wrapper
+Used module:     \protocol_fsm
+Used module:     \fsm_formal_checker
+
+2.2. Analyzing design hierarchy..
+Top module:  \formal_wrapper
+Used module:     \protocol_fsm
+Used module:     \fsm_formal_checker
+Removed 0 unused modules.
+Module formal_wrapper directly or indirectly contains formal properties -> setting "keep" attribute.
+Module fsm_formal_checker directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== formal_wrapper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+       12 wire bits
+        7 public wires
+        9 public wire bits
+        2 ports
+        2 port bits
+        9 cells
+        3   $anyseq
+        2   $assume
+        1   $ff
+        1   $logic_not
+        1   $mux
+        1   $not
+        2 submodules
+        1   fsm_formal_checker
+        1   protocol_fsm
+
+=== fsm_formal_checker ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        8 wires
+       10 wire bits
+        4 public wires
+        6 public wire bits
+        3 ports
+        5 port bits
+        7 cells
+        1   $assert
+        1   $assume
+        2   $ff
+        1   $le
+        1   $mux
+        1   $not
+
+=== protocol_fsm ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       17 wires
+       29 wire bits
+        6 public wires
+        8 public wire bits
+        6 ports
+        8 port bits
+       13 cells
+        1   $anyinit
+        1   $assume
+        4   $eq
+        1   $logic_not
+        4   $mux
+        1   $not
+        1   $pmux
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+       29 formal_wrapper
+        7 fsm_formal_checker
+       13 protocol_fsm
+
+        +----------Count including submodules.
+        | 
+       35 wires
+       51 wire bits
+       17 public wires
+       23 public wire bits
+       11 ports
+       15 port bits
+        - memories
+        - memory bits
+        - processes
+       29 cells
+        1   $anyinit
+        3   $anyseq
+        1   $assert
+        4   $assume
+        4   $eq
+        3   $ff
+        1   $le
+        2   $logic_not
+        6   $mux
+        3   $not
+        1   $pmux
+        2 submodules
+        1   fsm_formal_checker
+        1   protocol_fsm
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module fsm_formal_checker.
+Creating SMT-LIBv2 representation of module protocol_fsm.
+Creating SMT-LIBv2 representation of module formal_wrapper.
+
+End of script. Logfile hash: e2bfb8c540, time: 0.00s, user: 0.01s, system: 0.00s, MEM: 14.02 MB peak
+Yosys 0.63+184 (git sha1 240439bdb-dirty, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
+Time spent: 52% 2x write_smt2 (0 sec), 19% 2x read_rtlil (0 sec), ...

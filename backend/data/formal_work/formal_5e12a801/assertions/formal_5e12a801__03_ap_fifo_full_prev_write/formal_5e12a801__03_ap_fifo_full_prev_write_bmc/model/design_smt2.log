@@ -1,0 +1,158 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.63+184 (git sha1 240439bdb-dirty, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `formal_wrapper'. Setting top module to formal_wrapper.
+
+2.1. Analyzing design hierarchy..
+Top module:  \formal_wrapper
+Used module:     \fifo
+Used module:     \fifo_sva
+
+2.2. Analyzing design hierarchy..
+Top module:  \formal_wrapper
+Used module:     \fifo
+Used module:     \fifo_sva
+Removed 0 unused modules.
+Module fifo_sva directly or indirectly contains formal properties -> setting "keep" attribute.
+Module formal_wrapper directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       55 wires
+     1962 wire bits
+       18 public wires
+      318 public wire bits
+        8 ports
+       22 port bits
+       51 cells
+        2   $add
+        3   $and
+        6   $anyinit
+        1   $assume
+        4   $eq
+        2   $logic_and
+        1   $logic_or
+        2   $lt
+       18   $mux
+        1   $neg
+        4   $not
+        2   $or
+        2   $pmux
+        2   $shift
+        1   $shiftx
+
+=== fifo_sva ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       28 wires
+       28 wire bits
+       14 public wires
+       14 public wire bits
+        9 ports
+        9 port bits
+       23 cells
+        2   $anyinit
+        1   $assert
+        3   $assume
+        2   $ff
+        2   $logic_and
+        4   $logic_not
+        8   $mux
+        1   $not
+
+=== formal_wrapper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       14 wires
+       28 wire bits
+       11 public wires
+       25 public wire bits
+        2 ports
+        2 port bits
+       10 cells
+        4   $anyseq
+        2   $assume
+        1   $ff
+        1   $logic_not
+        1   $mux
+        1   $not
+        2 submodules
+        1   fifo
+        1   fifo_sva
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+       84 formal_wrapper
+       51 fifo
+       23 fifo_sva
+
+        +----------Count including submodules.
+        | 
+       97 wires
+     2018 wire bits
+       43 public wires
+      357 public wire bits
+       19 ports
+       33 port bits
+        - memories
+        - memory bits
+        - processes
+       84 cells
+        2   $add
+        3   $and
+        8   $anyinit
+        4   $anyseq
+        1   $assert
+        6   $assume
+        4   $eq
+        3   $ff
+        4   $logic_and
+        5   $logic_not
+        1   $logic_or
+        2   $lt
+       27   $mux
+        1   $neg
+        6   $not
+        2   $or
+        2   $pmux
+        2   $shift
+        1   $shiftx
+        2 submodules
+        1   fifo
+        1   fifo_sva
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module fifo_sva.
+Creating SMT-LIBv2 representation of module fifo.
+Creating SMT-LIBv2 representation of module formal_wrapper.
+
+End of script. Logfile hash: 592b728a05, time: 0.00s, user: 0.01s, system: 0.01s, MEM: 15.12 MB peak
+Yosys 0.63+184 (git sha1 240439bdb-dirty, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
+Time spent: 76% 2x write_smt2 (0 sec), 11% 2x read_rtlil (0 sec), ...

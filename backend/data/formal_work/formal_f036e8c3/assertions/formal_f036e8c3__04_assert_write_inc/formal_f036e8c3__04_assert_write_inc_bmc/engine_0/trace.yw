@@ -1,0 +1,24 @@
+{
+  "format": "Yosys Witness Trace",
+  "generator": "smtbmc",
+  "clocks": [
+    {"path": ["\\clk"], "edge": "posedge", "offset": 0}
+  ],
+  "signals": [
+    {"path": ["\\clk"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\count"], "width": 4, "offset": 0, "init_only": false},
+    {"path": ["\\empty"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\full"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\rd_data"], "width": 8, "offset": 0, "init_only": false},
+    {"path": ["\\rd_en"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\rst_n"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\wr_data"], "width": 8, "offset": 0, "init_only": false},
+    {"path": ["\\wr_en"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\_va_assert_write_inc_triggered_1"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\count_past1"], "width": 4, "offset": 0, "init_only": true}
+  ],
+  "steps": [
+    {"bits": "0000100000000010000000000000000"},
+    {"bits": "00000000000000000000000000"}
+  ]
+}

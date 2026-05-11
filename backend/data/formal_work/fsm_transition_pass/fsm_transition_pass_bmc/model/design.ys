@@ -1,0 +1,10 @@
+# running in /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/fsm_transition_pass/fsm_transition_pass_bmc/src/
+read -formal fsm_transition_pass.sv
+read -formal fsm_formal_checker_monitor.sv
+read -formal formal_wrapper.sv
+prep -top formal_wrapper
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

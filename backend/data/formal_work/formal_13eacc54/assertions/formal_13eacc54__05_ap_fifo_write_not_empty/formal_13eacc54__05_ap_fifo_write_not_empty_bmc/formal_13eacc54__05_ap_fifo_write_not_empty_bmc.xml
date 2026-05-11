@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-04-07T17:44:09" hostname="Gautams-MacBook-Pro.local" package="formal_13eacc54__05_ap_fifo_write_not_empty" id="0" name="bmc" tests="1" errors="1" failures="0" time="0" skipped="0">
+<properties>
+<property name="os" value="Darwin"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="ERROR"/>
+</properties>
+<testcase classname="bmc" name="bmc" time="0">
+<error type="ERROR"/>
+</testcase>
+<system-out>SBY 17:44:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__05_ap_fifo_write_not_empty/formal_13eacc54__05_ap_fifo_write_not_empty_bmc] Removing directory '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__05_ap_fifo_write_not_empty/formal_13eacc54__05_ap_fifo_write_not_empty_bmc'.
+SBY 17:44:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__05_ap_fifo_write_not_empty/formal_13eacc54__05_ap_fifo_write_not_empty_bmc] Copy '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__05_ap_fifo_write_not_empty/formal_13eacc54__05_ap_fifo_write_not_empty_monitor.sv' to '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__05_ap_fifo_write_not_empty/formal_13eacc54__05_ap_fifo_write_not_empty_bmc/src/formal_13eacc54__05_ap_fifo_write_not_empty_monitor.sv'.
+SBY 17:44:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__05_ap_fifo_write_not_empty/formal_13eacc54__05_ap_fifo_write_not_empty_bmc] engine_0: smtbmc
+SBY 17:44:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__05_ap_fifo_write_not_empty/formal_13eacc54__05_ap_fifo_write_not_empty_bmc] base: starting process &quot;cd /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__05_ap_fifo_write_not_empty/formal_13eacc54__05_ap_fifo_write_not_empty_bmc/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 17:44:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__05_ap_fifo_write_not_empty/formal_13eacc54__05_ap_fifo_write_not_empty_bmc] base: formal_13eacc54__05_ap_fifo_write_not_empty_monitor.sv:53: ERROR: syntax error, unexpected '|'
+SBY 17:44:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__05_ap_fifo_write_not_empty/formal_13eacc54__05_ap_fifo_write_not_empty_bmc] base: finished (returncode=1)
+SBY 17:44:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__05_ap_fifo_write_not_empty/formal_13eacc54__05_ap_fifo_write_not_empty_bmc] base: task failed. ERROR.
+SBY 17:44:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__05_ap_fifo_write_not_empty/formal_13eacc54__05_ap_fifo_write_not_empty_bmc] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 17:44:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__05_ap_fifo_write_not_empty/formal_13eacc54__05_ap_fifo_write_not_empty_bmc] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 17:44:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__05_ap_fifo_write_not_empty/formal_13eacc54__05_ap_fifo_write_not_empty_bmc] summary: engine_0 (smtbmc) did not return a status
+SBY 17:44:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__05_ap_fifo_write_not_empty/formal_13eacc54__05_ap_fifo_write_not_empty_bmc] summary: engine_0 did not produce any traces
+SBY 17:44:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_13eacc54/assertions/formal_13eacc54__05_ap_fifo_write_not_empty/formal_13eacc54__05_ap_fifo_write_not_empty_bmc] DONE (ERROR, rc=16)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

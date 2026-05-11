@@ -1,0 +1,8 @@
+# running in /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_f036e8c3/assertions/formal_f036e8c3__01_assert_not_full_and_empty/formal_f036e8c3__01_assert_not_full_and_empty_bmc/src/
+read -formal formal_f036e8c3__01_assert_not_full_and_empty_monitor.sv
+prep -top fifo_checker
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

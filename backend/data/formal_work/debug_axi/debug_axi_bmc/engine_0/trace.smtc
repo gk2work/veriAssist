@@ -1,0 +1,14 @@
+initial
+assume (= [u_dut.awready] false)
+assume (= [u_dut.counter] #b0000)
+assume (= [u_monitor.$auto$async2sync.cc:107:execute$58] false)
+assume (= [u_monitor.$auto$async2sync.cc:116:execute$62] true)
+assume (= [u_monitor._va_assert_awready_triggered_1] true)
+
+state 0
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 1
+assume (= [clk] false)
+assume (= [rst_n] false)

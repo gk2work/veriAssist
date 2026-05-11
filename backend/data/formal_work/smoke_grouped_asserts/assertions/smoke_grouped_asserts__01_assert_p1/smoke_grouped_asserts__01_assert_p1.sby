@@ -1,0 +1,16 @@
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+bmc: depth 5
+
+[engines]
+smtbmc
+
+[script]
+read -formal smoke_grouped_asserts__01_assert_p1_monitor.sv
+prep -top mini_checker
+
+[files]
+smoke_grouped_asserts__01_assert_p1_monitor.sv

@@ -1,0 +1,33 @@
+{
+  "format": "Yosys Witness Trace",
+  "generator": "smtbmc",
+  "clocks": [
+    {"path": ["\\clk"], "edge": "posedge", "offset": 0}
+  ],
+  "signals": [
+    {"path": ["\\clk"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\rd_en"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\rst_n"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\u_dut", "\\_witness_", "\\anyseq_auto_setundef_cc_550_execute_312"], "width": 8, "offset": 0, "init_only": false},
+    {"path": ["\\wr_data"], "width": 8, "offset": 0, "init_only": false},
+    {"path": ["\\wr_en"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\u_dut", "\\_witness_", "\\anyinit_procdff_212"], "width": 4, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\_witness_", "\\anyinit_procdff_217"], "width": 4, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\mem[0]"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\mem[1]"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\mem[2]"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\mem[3]"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\mem[4]"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\mem[5]"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\mem[6]"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\mem[7]"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_monitor", "\\_va_ap_fifo_empty_after_reset_triggered_6"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\u_monitor", "\\reset_n_prev"], "width": 1, "offset": 0, "init_only": true}
+  ],
+  "steps": [
+    {"bits": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"},
+    {"bits": "10000000000000000100"},
+    {"bits": "00000000000000000100"},
+    {"bits": "00000000000000000000"}
+  ]
+}

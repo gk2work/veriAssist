@@ -1,0 +1,8 @@
+# running in /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_9430016b/assertions/formal_9430016b__10_ap_fifo_data_after_empty_1_4/formal_9430016b__10_ap_fifo_data_after_empty_1_4_bmc/model/
+read_rtlil design_prep.il
+hierarchy -smtcheck
+delete */t:$print
+formalff -assume
+dffunmap
+stat
+write_smt2 -wires design_smt2.smt2

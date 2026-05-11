@@ -1,0 +1,336 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.63+184 (git sha1 240439bdb-dirty, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: fifo.sv
+Parsing formal SystemVerilog input from `fifo.sv' to AST representation.
+Storing AST representation for module `$abstract\fifo'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: fifo_sva.sv
+Parsing formal SystemVerilog input from `fifo_sva.sv' to AST representation.
+Storing AST representation for module `$abstract\fifo_sva'.
+Successfully finished Verilog frontend.
+
+3. Executing PREP pass.
+
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1.1. Executing AST frontend in derive mode using pre-parsed AST for module `\fifo_sva'.
+Generating RTLIL representation for module `\fifo_sva'.
+
+3.1.2. Executing AST frontend in derive mode using pre-parsed AST for module `\fifo'.
+Generating RTLIL representation for module `\fifo'.
+Warning: Replacing memory \mem with list of registers. See fifo.sv:36
+Module fifo_sva directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3.2. Executing PROC pass (convert processes to netlists).
+
+3.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$fifo.sv:28$61 in module fifo.
+Marked 1 switch rules as full_case in process $proc$fifo.sv:28$61 in module fifo.
+Marked 3 switch rules as full_case in process $proc$fifo.sv:30$47 in module fifo.
+Removed a total of 1 dead cases.
+
+3.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 11 assignments to connections.
+
+3.2.4. Executing PROC_INIT pass (extract init attributes).
+
+3.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset_n in `\fifo.$proc$fifo.sv:30$47'.
+
+3.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~11 debug messages>
+
+3.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\fifo.$proc$fifo.sv:28$61'.
+     1/1: $1$mem2reg_rd$\mem$fifo.sv:28$41_DATA[7:0]$63
+Creating decoders for process `\fifo.$proc$fifo.sv:30$47'.
+     1/14: $2$mem2reg_wr$\mem$fifo.sv:36$42_ADDR[2:0]$55
+     2/14: $2$mem2reg_wr$\mem$fifo.sv:36$42_DATA[7:0]$56
+     3/14: $1$mem2reg_wr$\mem$fifo.sv:36$42_DATA[7:0]$52
+     4/14: $1$mem2reg_wr$\mem$fifo.sv:36$42_ADDR[2:0]$51
+     5/14: $0\mem[7][7:0]
+     6/14: $0\mem[6][7:0]
+     7/14: $0\mem[5][7:0]
+     8/14: $0\mem[4][7:0]
+     9/14: $0\mem[3][7:0]
+    10/14: $0\mem[2][7:0]
+    11/14: $0\mem[1][7:0]
+    12/14: $0\mem[0][7:0]
+    13/14: $0\rd_ptr[3:0]
+    14/14: $0\wr_ptr[3:0]
+Creating decoders for process `\fifo_sva.$proc$fifo_sva.sv:60$35'.
+Creating decoders for process `\fifo_sva.$proc$fifo_sva.sv:54$29'.
+     1/1: \ap_fifo_empty_after_reset_EN
+Creating decoders for process `\fifo_sva.$proc$fifo_sva.sv:24$3'.
+     1/6: \ap_fifo_rw_simultaneous_EN
+     2/6: \ap_fifo_empty_stable_on_empty_read_EN
+     3/6: \ap_fifo_full_stable_on_full_write_EN
+     4/6: \ap_fifo_empty_prev_read_EN
+     5/6: \ap_fifo_write_not_empty_EN
+     6/6: \ap_fifo_not_full_empty_EN
+Creating decoders for process `\fifo_sva.$proc$fifo_sva.sv:16$2'.
+
+3.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\fifo.$mem2reg_rd$\mem$fifo.sv:28$41_DATA' from process `\fifo.$proc$fifo.sv:28$61'.
+
+3.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\fifo.\wr_ptr' using process `\fifo.$proc$fifo.sv:30$47'.
+  created $adff cell `$procdff$180' with positive edge clock and positive level reset.
+Creating register for signal `\fifo.\rd_ptr' using process `\fifo.$proc$fifo.sv:30$47'.
+  created $adff cell `$procdff$185' with positive edge clock and positive level reset.
+Creating register for signal `\fifo.\mem[0]' using process `\fifo.$proc$fifo.sv:30$47'.
+  created $dff cell `$procdff$192' with positive edge clock.
+Creating register for signal `\fifo.\mem[1]' using process `\fifo.$proc$fifo.sv:30$47'.
+  created $dff cell `$procdff$199' with positive edge clock.
+Creating register for signal `\fifo.\mem[2]' using process `\fifo.$proc$fifo.sv:30$47'.
+  created $dff cell `$procdff$206' with positive edge clock.
+Creating register for signal `\fifo.\mem[3]' using process `\fifo.$proc$fifo.sv:30$47'.
+  created $dff cell `$procdff$213' with positive edge clock.
+Creating register for signal `\fifo.\mem[4]' using process `\fifo.$proc$fifo.sv:30$47'.
+  created $dff cell `$procdff$220' with positive edge clock.
+Creating register for signal `\fifo.\mem[5]' using process `\fifo.$proc$fifo.sv:30$47'.
+  created $dff cell `$procdff$227' with positive edge clock.
+Creating register for signal `\fifo.\mem[6]' using process `\fifo.$proc$fifo.sv:30$47'.
+  created $dff cell `$procdff$234' with positive edge clock.
+Creating register for signal `\fifo.\mem[7]' using process `\fifo.$proc$fifo.sv:30$47'.
+  created $dff cell `$procdff$241' with positive edge clock.
+Creating register for signal `\fifo_sva.$past$fifo_sva.sv:55$1$0' using process `\fifo_sva.$proc$fifo_sva.sv:54$29'.
+  created $dff cell `$procdff$242' with positive edge clock.
+Creating register for signal `\fifo_sva.\wr_en_d' using process `\fifo_sva.$proc$fifo_sva.sv:16$2'.
+  created $dff cell `$procdff$243' with positive edge clock.
+Creating register for signal `\fifo_sva.\rd_en_d' using process `\fifo_sva.$proc$fifo_sva.sv:16$2'.
+  created $dff cell `$procdff$244' with positive edge clock.
+Creating register for signal `\fifo_sva.\full_d' using process `\fifo_sva.$proc$fifo_sva.sv:16$2'.
+  created $dff cell `$procdff$245' with positive edge clock.
+Creating register for signal `\fifo_sva.\empty_d' using process `\fifo_sva.$proc$fifo_sva.sv:16$2'.
+  created $dff cell `$procdff$246' with positive edge clock.
+
+3.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\fifo.$proc$fifo.sv:28$61'.
+Removing empty process `fifo.$proc$fifo.sv:28$61'.
+Found and cleaned up 3 empty switches in `\fifo.$proc$fifo.sv:30$47'.
+Removing empty process `fifo.$proc$fifo.sv:30$47'.
+Removing empty process `fifo_sva.$proc$fifo_sva.sv:60$35'.
+Found and cleaned up 1 empty switch in `\fifo_sva.$proc$fifo_sva.sv:54$29'.
+Removing empty process `fifo_sva.$proc$fifo_sva.sv:54$29'.
+Found and cleaned up 6 empty switches in `\fifo_sva.$proc$fifo_sva.sv:24$3'.
+Removing empty process `fifo_sva.$proc$fifo_sva.sv:24$3'.
+Removing empty process `fifo_sva.$proc$fifo_sva.sv:16$2'.
+Cleaned up 11 empty switches.
+
+3.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo.
+<suppressed ~22 debug messages>
+Optimizing module fifo_sva.
+<suppressed ~2 debug messages>
+
+3.3. Executing FUTURE pass.
+
+3.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo.
+Optimizing module fifo_sva.
+
+3.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo..
+Finding unused cells or wires in module \fifo_sva..
+Removed 13 unused cells and 86 unused wires.
+<suppressed ~15 debug messages>
+
+3.6. Executing CHECK pass (checking for obvious problems).
+Checking module fifo...
+Checking module fifo_sva...
+Found and reported 0 problems.
+
+3.7. Executing OPT pass (performing simple optimizations).
+
+3.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo.
+Optimizing module fifo_sva.
+
+3.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\fifo'.
+Computing hashes of 63 cells of `\fifo'.
+Finding duplicate cells in `\fifo'.
+Finding identical cells in module `\fifo_sva'.
+Computing hashes of 59 cells of `\fifo_sva'.
+Finding duplicate cells in `\fifo_sva'.
+Computing hashes of 53 cells of `\fifo_sva'.
+Finding duplicate cells in `\fifo_sva'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+3.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \fifo_sva..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~57 debug messages>
+
+3.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \fifo.
+  Optimizing cells in module \fifo_sva.
+Performed a total of 0 changes.
+
+3.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\fifo'.
+Computing hashes of 63 cells of `\fifo'.
+Finding duplicate cells in `\fifo'.
+Finding identical cells in module `\fifo_sva'.
+Computing hashes of 53 cells of `\fifo_sva'.
+Finding duplicate cells in `\fifo_sva'.
+Removed a total of 0 cells.
+
+3.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo..
+Finding unused cells or wires in module \fifo_sva..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+3.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo.
+Optimizing module fifo_sva.
+
+3.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \fifo_sva..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~57 debug messages>
+
+3.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \fifo.
+  Optimizing cells in module \fifo_sva.
+Performed a total of 0 changes.
+
+3.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\fifo'.
+Computing hashes of 63 cells of `\fifo'.
+Finding duplicate cells in `\fifo'.
+Finding identical cells in module `\fifo_sva'.
+Computing hashes of 53 cells of `\fifo_sva'.
+Finding duplicate cells in `\fifo_sva'.
+Removed a total of 0 cells.
+
+3.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo..
+Finding unused cells or wires in module \fifo_sva..
+
+3.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo.
+Optimizing module fifo_sva.
+
+3.7.14. Finished fast OPT passes. (There is nothing left to do.)
+
+3.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 3) from port B of cell fifo.$procmux$69_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell fifo.$procmux$70_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell fifo.$procmux$71_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell fifo.$procmux$111_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell fifo.$procmux$121_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell fifo.$procmux$132_CMP0 ($eq).
+
+3.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo..
+Finding unused cells or wires in module \fifo_sva..
+
+3.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.11. Executing OPT pass (performing simple optimizations).
+
+3.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo.
+Optimizing module fifo_sva.
+
+3.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\fifo'.
+Computing hashes of 63 cells of `\fifo'.
+Finding duplicate cells in `\fifo'.
+Finding identical cells in module `\fifo_sva'.
+Computing hashes of 53 cells of `\fifo_sva'.
+Finding duplicate cells in `\fifo_sva'.
+Removed a total of 0 cells.
+
+3.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo..
+Finding unused cells or wires in module \fifo_sva..
+
+3.11.4. Finished fast OPT passes.
+
+3.12. Executing SORT pass.
+
+3.13. Printing statistics.
+
+=== fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       68 wires
+      324 wire bits
+       18 public wires
+       94 public wire bits
+        8 ports
+       22 port bits
+       63 cells
+        2   $add
+        2   $adff
+        8   $dff
+       16   $eq
+        3   $logic_and
+        4   $logic_not
+       26   $mux
+        1   $ne
+        1   $pmux
+
+=== fifo_sva ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       52 wires
+       52 wire bits
+       20 public wires
+       20 public wire bits
+        6 ports
+        6 port bits
+       53 cells
+       10   $check
+        5   $dff
+       17   $logic_and
+        8   $logic_not
+        1   $logic_or
+       12   $mux
+
+3.14. Executing CHECK pass (checking for obvious problems).
+Checking module fifo...
+Checking module fifo_sva...
+Found and reported 0 problems.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+ERROR: Design has no top module.

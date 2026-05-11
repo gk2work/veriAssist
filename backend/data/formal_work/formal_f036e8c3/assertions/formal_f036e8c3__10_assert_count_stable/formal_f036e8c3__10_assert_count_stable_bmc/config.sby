@@ -1,0 +1,13 @@
+[options]
+mode bmc
+depth 20
+
+[engines]
+smtbmc
+
+[script]
+read -formal formal_f036e8c3__10_assert_count_stable_monitor.sv
+prep -top fifo_checker
+
+[files]
+formal_f036e8c3__10_assert_count_stable_monitor.sv

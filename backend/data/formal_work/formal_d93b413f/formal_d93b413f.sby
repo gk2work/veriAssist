@@ -1,0 +1,16 @@
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+bmc: depth 10
+
+[engines]
+smtbmc
+
+[script]
+read -formal formal_d93b413f_monitor.sv
+prep -top chk
+
+[files]
+formal_d93b413f_monitor.sv

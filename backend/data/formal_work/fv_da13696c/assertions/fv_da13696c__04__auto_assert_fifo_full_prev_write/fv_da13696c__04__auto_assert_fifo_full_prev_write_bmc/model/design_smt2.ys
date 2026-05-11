@@ -1,0 +1,8 @@
+# running in /Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_da13696c/assertions/fv_da13696c__04__auto_assert_fifo_full_prev_write/fv_da13696c__04__auto_assert_fifo_full_prev_write_bmc/model/
+read_rtlil design_prep.il
+hierarchy -smtcheck
+delete */t:$print
+formalff -assume
+dffunmap
+stat
+write_smt2 -wires design_smt2.smt2

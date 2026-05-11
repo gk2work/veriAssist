@@ -1,0 +1,13 @@
+[options]
+mode bmc
+depth 20
+
+[engines]
+smtbmc
+
+[script]
+read -formal formal_f036e8c3__01_assert_not_full_and_empty_monitor.sv
+prep -top fifo_checker
+
+[files]
+formal_f036e8c3__01_assert_not_full_and_empty_monitor.sv

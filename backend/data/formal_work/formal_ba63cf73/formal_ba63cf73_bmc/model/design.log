@@ -1,0 +1,319 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.63+184 (git sha1 240439bdb-dirty, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: formal_ba63cf73_monitor.sv
+Parsing formal SystemVerilog input from `formal_ba63cf73_monitor.sv' to AST representation.
+Storing AST representation for module `$abstract\fifo_checker'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\fifo_checker'.
+Generating RTLIL representation for module `\fifo_checker'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \fifo_checker
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \fifo_checker
+Removing unused module `$abstract\fifo_checker'.
+Removed 1 unused modules.
+Module fifo_checker directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$formal_ba63cf73_monitor.sv:155$84 in module fifo_checker.
+Marked 1 switch rules as full_case in process $proc$formal_ba63cf73_monitor.sv:99$42 in module fifo_checker.
+Marked 1 switch rules as full_case in process $proc$formal_ba63cf73_monitor.sv:77$26 in module fifo_checker.
+Marked 1 switch rules as full_case in process $proc$formal_ba63cf73_monitor.sv:36$3 in module fifo_checker.
+Marked 1 switch rules as full_case in process $proc$formal_ba63cf73_monitor.sv:19$1 in module fifo_checker.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 9 redundant assignments.
+Promoted 0 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~23 debug messages>
+
+2.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:155$84'.
+     1/2: $0\_va_assert_count_stable_triggered_3[0:0]
+     2/2: \assert_count_stable_EN
+Creating decoders for process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:145$75'.
+     1/1: \assert_empty_rise_EN
+Creating decoders for process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:136$66'.
+     1/1: \assert_full_rise_EN
+Creating decoders for process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:128$62'.
+     1/1: \assert_count_pos_EN
+Creating decoders for process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:120$58'.
+     1/1: \assert_count_bounded_EN
+Creating decoders for process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:111$54'.
+     1/1: \assume_no_read_empty_EN
+Creating decoders for process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:99$42'.
+     1/2: $0\_va_assert_read_dec_triggered_2[0:0]
+     2/2: \assert_read_dec_EN
+Creating decoders for process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:89$38'.
+     1/1: \assume_no_write_full_EN
+Creating decoders for process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:77$26'.
+     1/2: $0\_va_assert_write_inc_triggered_1[0:0]
+     2/2: \assert_write_inc_EN
+Creating decoders for process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:67$18'.
+     1/1: \assert_full_max_EN
+Creating decoders for process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:58$10'.
+     1/1: \assert_empty_zero_EN
+Creating decoders for process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:50$5'.
+     1/1: \assert_not_full_and_empty_EN
+Creating decoders for process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:36$3'.
+     1/3: $0\rd_en_past1[0:0]
+     2/3: $0\wr_en_past1[0:0]
+     3/3: $0\count_past1[3:0]
+Creating decoders for process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:19$1'.
+     1/3: $0\full_prev[0:0]
+     2/3: $0\empty_prev[0:0]
+     3/3: $0\count_prev[3:0]
+
+2.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\fifo_checker.\_va_assert_count_stable_triggered_3' using process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:155$84'.
+  created $dff cell `$procdff$166' with positive edge clock.
+Creating register for signal `\fifo_checker.\_va_assert_read_dec_triggered_2' using process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:99$42'.
+  created $dff cell `$procdff$167' with positive edge clock.
+Creating register for signal `\fifo_checker.\_va_assert_write_inc_triggered_1' using process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:77$26'.
+  created $dff cell `$procdff$168' with positive edge clock.
+Creating register for signal `\fifo_checker.\count_past1' using process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:36$3'.
+  created $dff cell `$procdff$169' with positive edge clock.
+Creating register for signal `\fifo_checker.\wr_en_past1' using process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:36$3'.
+  created $dff cell `$procdff$170' with positive edge clock.
+Creating register for signal `\fifo_checker.\rd_en_past1' using process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:36$3'.
+  created $dff cell `$procdff$171' with positive edge clock.
+Creating register for signal `\fifo_checker.\count_prev' using process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:19$1'.
+  created $dff cell `$procdff$172' with positive edge clock.
+Creating register for signal `\fifo_checker.\empty_prev' using process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:19$1'.
+  created $dff cell `$procdff$173' with positive edge clock.
+Creating register for signal `\fifo_checker.\full_prev' using process `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:19$1'.
+  created $dff cell `$procdff$174' with positive edge clock.
+
+2.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:155$84'.
+Removing empty process `fifo_checker.$proc$formal_ba63cf73_monitor.sv:155$84'.
+Found and cleaned up 2 empty switches in `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:145$75'.
+Removing empty process `fifo_checker.$proc$formal_ba63cf73_monitor.sv:145$75'.
+Found and cleaned up 2 empty switches in `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:136$66'.
+Removing empty process `fifo_checker.$proc$formal_ba63cf73_monitor.sv:136$66'.
+Found and cleaned up 1 empty switch in `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:128$62'.
+Removing empty process `fifo_checker.$proc$formal_ba63cf73_monitor.sv:128$62'.
+Found and cleaned up 1 empty switch in `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:120$58'.
+Removing empty process `fifo_checker.$proc$formal_ba63cf73_monitor.sv:120$58'.
+Found and cleaned up 2 empty switches in `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:111$54'.
+Removing empty process `fifo_checker.$proc$formal_ba63cf73_monitor.sv:111$54'.
+Found and cleaned up 2 empty switches in `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:99$42'.
+Removing empty process `fifo_checker.$proc$formal_ba63cf73_monitor.sv:99$42'.
+Found and cleaned up 2 empty switches in `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:89$38'.
+Removing empty process `fifo_checker.$proc$formal_ba63cf73_monitor.sv:89$38'.
+Found and cleaned up 2 empty switches in `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:77$26'.
+Removing empty process `fifo_checker.$proc$formal_ba63cf73_monitor.sv:77$26'.
+Found and cleaned up 2 empty switches in `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:67$18'.
+Removing empty process `fifo_checker.$proc$formal_ba63cf73_monitor.sv:67$18'.
+Found and cleaned up 2 empty switches in `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:58$10'.
+Removing empty process `fifo_checker.$proc$formal_ba63cf73_monitor.sv:58$10'.
+Found and cleaned up 1 empty switch in `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:50$5'.
+Removing empty process `fifo_checker.$proc$formal_ba63cf73_monitor.sv:50$5'.
+Found and cleaned up 1 empty switch in `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:36$3'.
+Removing empty process `fifo_checker.$proc$formal_ba63cf73_monitor.sv:36$3'.
+Found and cleaned up 1 empty switch in `\fifo_checker.$proc$formal_ba63cf73_monitor.sv:19$1'.
+Removing empty process `fifo_checker.$proc$formal_ba63cf73_monitor.sv:19$1'.
+Cleaned up 23 empty switches.
+
+2.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo_checker.
+<suppressed ~29 debug messages>
+
+2.4. Executing FUTURE pass.
+
+2.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo_checker.
+
+2.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo_checker..
+Removed 14 unused cells and 81 unused wires.
+<suppressed ~15 debug messages>
+
+2.7. Executing CHECK pass (checking for obvious problems).
+Checking module fifo_checker...
+Found and reported 0 problems.
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo_checker.
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\fifo_checker'.
+Computing hashes of 93 cells of `\fifo_checker'.
+Finding duplicate cells in `\fifo_checker'.
+Computing hashes of 87 cells of `\fifo_checker'.
+Finding duplicate cells in `\fifo_checker'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \fifo_checker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~51 debug messages>
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \fifo_checker.
+Performed a total of 0 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\fifo_checker'.
+Computing hashes of 87 cells of `\fifo_checker'.
+Finding duplicate cells in `\fifo_checker'.
+Computing hashes of 84 cells of `\fifo_checker'.
+Finding duplicate cells in `\fifo_checker'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+2.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo_checker..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~1 debug messages>
+
+2.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo_checker.
+
+2.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \fifo_checker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~45 debug messages>
+
+2.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \fifo_checker.
+Performed a total of 0 changes.
+
+2.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\fifo_checker'.
+Computing hashes of 84 cells of `\fifo_checker'.
+Finding duplicate cells in `\fifo_checker'.
+Removed a total of 0 cells.
+
+2.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo_checker..
+
+2.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo_checker.
+
+2.8.14. Finished fast OPT passes. (There is nothing left to do.)
+
+2.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell fifo_checker.$add$formal_ba63cf73_monitor.sv:81$28 ($add).
+Removed top 27 bits (of 32) from port Y of cell fifo_checker.$add$formal_ba63cf73_monitor.sv:81$28 ($add).
+Removed top 27 bits (of 32) from port B of cell fifo_checker.$eq$formal_ba63cf73_monitor.sv:81$29 ($eq).
+Removed top 31 bits (of 32) from port B of cell fifo_checker.$sub$formal_ba63cf73_monitor.sv:103$44 ($sub).
+Removed top 27 bits (of 32) from port Y of cell fifo_checker.$sub$formal_ba63cf73_monitor.sv:103$44 ($sub).
+Removed top 28 bits (of 32) from port B of cell fifo_checker.$le$formal_ba63cf73_monitor.sv:122$61 ($le).
+Removed top 31 bits (of 32) from port B of cell fifo_checker.$ge$formal_ba63cf73_monitor.sv:130$65 ($ge).
+Removed top 27 bits (of 32) from wire fifo_checker.$add$formal_ba63cf73_monitor.sv:81$28_Y.
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo_checker..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo_checker.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\fifo_checker'.
+Computing hashes of 84 cells of `\fifo_checker'.
+Finding duplicate cells in `\fifo_checker'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo_checker..
+
+2.12.4. Finished fast OPT passes.
+
+2.13. Executing SORT pass.
+
+2.14. Printing statistics.
+
+=== fifo_checker ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       83 wires
+      144 wire bits
+       30 public wires
+       53 public wire bits
+        9 ports
+       26 port bits
+       84 cells
+        1   $add
+       12   $check
+        9   $dff
+        4   $eq
+        1   $ge
+        1   $le
+       15   $logic_and
+       13   $logic_not
+       27   $mux
+        1   $sub
+
+2.15. Executing CHECK pass (checking for obvious problems).
+Checking module fifo_checker...
+Found and reported 0 problems.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `fifo_checker'. Setting top module to fifo_checker.
+
+3.1. Analyzing design hierarchy..
+Top module:  \fifo_checker
+
+3.2. Analyzing design hierarchy..
+Top module:  \fifo_checker
+Removed 0 unused modules.
+Module fifo_checker directly or indirectly contains formal properties -> setting "keep" attribute.
+
+4. Executing jny backend.
+
+5. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 68938d97e6, time: 0.04s, user: 0.01s, system: 0.02s, MEM: 17.50 MB peak
+Yosys 0.63+184 (git sha1 240439bdb-dirty, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
+Time spent: 14% 2x hierarchy (0 sec), 13% 5x opt_clean (0 sec), ...

@@ -1,0 +1,19 @@
+[tasks]
+prove
+
+[options]
+prove: mode prove
+prove: depth 20
+prove: timeout 300
+
+[engines]
+smtbmc boolector
+
+[script]
+read -formal fifo.sv
+read -formal fifo_sva.sv
+prep -top fifo
+
+[files]
+fifo.sv
+fifo_sva.sv

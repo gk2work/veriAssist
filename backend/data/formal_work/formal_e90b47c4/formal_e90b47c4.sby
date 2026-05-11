@@ -1,0 +1,16 @@
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+bmc: depth 20
+
+[engines]
+smtbmc
+
+[script]
+read -formal formal_e90b47c4_monitor.sv
+prep -top fifo_checker
+
+[files]
+formal_e90b47c4_monitor.sv

@@ -1,0 +1,57 @@
+initial
+assume (= [_va_past_valid] false)
+assume (= [u_dut.count] #b1100)
+assume (= [u_dut.rd_data] #b00000000)
+assume (= [u_dut.rd_ptr] #b000)
+assume (= [u_dut.wr_ptr] #b000)
+assume (= [u_monitor.$auto$async2sync.cc:107:execute$117] false)
+assume (= [u_monitor.$auto$async2sync.cc:116:execute$121] true)
+assume (= (select [u_dut.mem] #b000) #b00000000)
+
+state 0
+assume (= [clk] false)
+assume (= [rst_n] false)
+
+state 1
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 2
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 3
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 4
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 5
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 6
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 7
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 8
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 9
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 10
+assume (= [clk] false)
+assume (= [rst_n] true)
+
+state 11
+assume (= [clk] false)
+assume (= [rst_n] false)

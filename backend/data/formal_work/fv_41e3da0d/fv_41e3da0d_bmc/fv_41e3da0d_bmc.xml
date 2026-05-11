@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-04-07T21:27:38" hostname="Gautams-MacBook-Pro.local" package="fv_41e3da0d" id="0" name="bmc" tests="1" errors="1" failures="0" time="0" skipped="0">
+<properties>
+<property name="os" value="Darwin"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="ERROR"/>
+</properties>
+<testcase classname="bmc" name="bmc" time="0">
+<error type="ERROR"/>
+</testcase>
+<system-out>SBY 21:27:37 [/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc] Removing directory '/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc'.
+SBY 21:27:37 [/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc] Copy '/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fifo.sv' to '/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc/src/fifo.sv'.
+SBY 21:27:37 [/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc] Copy '/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fifo_sva.sv' to '/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc/src/fifo_sva.sv'.
+SBY 21:27:37 [/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc] engine_0: smtbmc boolector
+SBY 21:27:37 [/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc] base: starting process &quot;cd /Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 21:27:38 [/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc] base: fifo_sva.sv:15: ERROR: syntax error, unexpected TOK_DEFAULT
+SBY 21:27:38 [/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc] base: finished (returncode=1)
+SBY 21:27:38 [/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc] base: task failed. ERROR.
+SBY 21:27:38 [/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 21:27:38 [/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 21:27:38 [/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc] summary: engine_0 (smtbmc boolector) did not return a status
+SBY 21:27:38 [/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc] summary: engine_0 did not produce any traces
+SBY 21:27:38 [/Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_41e3da0d/fv_41e3da0d_bmc] DONE (ERROR, rc=16)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

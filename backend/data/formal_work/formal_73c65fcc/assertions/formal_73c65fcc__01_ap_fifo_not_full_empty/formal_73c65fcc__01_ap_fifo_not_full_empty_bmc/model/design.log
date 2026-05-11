@@ -1,0 +1,276 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.63+184 (git sha1 240439bdb-dirty, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv
+Parsing formal SystemVerilog input from `formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv' to AST representation.
+Storing AST representation for module `$abstract\fifo'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\fifo'.
+Generating RTLIL representation for module `\fifo'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \fifo
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \fifo
+Removing unused module `$abstract\fifo'.
+Removed 1 unused modules.
+Module fifo directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:177$80'.
+Found and cleaned up 2 empty switches in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:164$73'.
+Removing empty process `fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:164$73'.
+Found and cleaned up 1 empty switch in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:150$68'.
+Found and cleaned up 2 empty switches in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:137$59'.
+Removing empty process `fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:137$59'.
+Found and cleaned up 2 empty switches in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:125$52'.
+Removing empty process `fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:125$52'.
+Found and cleaned up 2 empty switches in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:114$42'.
+Removing empty process `fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:114$42'.
+Cleaned up 10 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:150$68 in module fifo.
+Marked 1 switch rules as full_case in process $proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:177$80 in module fifo.
+Marked 1 switch rules as full_case in process $proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:89$25 in module fifo.
+Marked 1 switch rules as full_case in process $proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:37$3 in module fifo.
+Marked 1 switch rules as full_case in process $proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:19$1 in module fifo.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 10 redundant assignments.
+Promoted 0 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~18 debug messages>
+
+2.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:150$68'.
+     1/1: $0\_va_ap_fifo_write_not_empty_delay_2[0:0]
+Creating decoders for process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:211$88'.
+     1/1: \cp_fifo_full_no_write_EN
+Creating decoders for process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:177$80'.
+     1/1: $0\_va_ap_fifo_read_write_equal_delay_3[0:0]
+Creating decoders for process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:222$92'.
+     1/1: \cp_fifo_empty_no_read_EN
+Creating decoders for process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:103$30'.
+     1/1: \ap_fifo_not_full_empty_EN
+Creating decoders for process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:89$25'.
+     1/2: $0\_va_wp_fifo_full_after_28_delay_1[27:0]
+     2/2: \wp_fifo_full_after_28_EN
+Creating decoders for process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:77$17'.
+     1/1: \wp_fifo_full_falling_edge_EN
+Creating decoders for process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:66$11'.
+     1/1: \wp_fifo_empty_EN
+Creating decoders for process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:55$5'.
+     1/1: \wp_fifo_full_EN
+Creating decoders for process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:37$3'.
+     1/4: $0\wr_data_in_past2[0:0]
+     2/4: $0\wr_data_in_past1[0:0]
+     3/4: $0\rd_en_in_past1[0:0]
+     4/4: $0\wr_en_in_past1[0:0]
+Creating decoders for process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:19$1'.
+     1/3: $0\rst_n_in_prev[0:0]
+     2/3: $0\full_out_prev[0:0]
+     3/3: $0\empty_out_prev[0:0]
+
+2.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\fifo.\_va_ap_fifo_write_not_empty_delay_2' using process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:150$68'.
+  created $dff cell `$procdff$155' with positive edge clock.
+Creating register for signal `\fifo.\_va_ap_fifo_read_write_equal_delay_3' using process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:177$80'.
+  created $dff cell `$procdff$156' with positive edge clock.
+Creating register for signal `\fifo.\_va_wp_fifo_full_after_28_delay_1' using process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:89$25'.
+  created $dff cell `$procdff$157' with positive edge clock.
+Creating register for signal `\fifo.\wr_en_in_past1' using process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:37$3'.
+  created $dff cell `$procdff$158' with positive edge clock.
+Creating register for signal `\fifo.\rd_en_in_past1' using process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:37$3'.
+  created $dff cell `$procdff$159' with positive edge clock.
+Creating register for signal `\fifo.\wr_data_in_past1' using process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:37$3'.
+  created $dff cell `$procdff$160' with positive edge clock.
+Creating register for signal `\fifo.\wr_data_in_past2' using process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:37$3'.
+  created $dff cell `$procdff$161' with positive edge clock.
+Creating register for signal `\fifo.\empty_out_prev' using process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:19$1'.
+  created $dff cell `$procdff$162' with positive edge clock.
+Creating register for signal `\fifo.\full_out_prev' using process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:19$1'.
+  created $dff cell `$procdff$163' with positive edge clock.
+Creating register for signal `\fifo.\rst_n_in_prev' using process `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:19$1'.
+  created $dff cell `$procdff$164' with positive edge clock.
+
+2.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:150$68'.
+Removing empty process `fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:150$68'.
+Found and cleaned up 2 empty switches in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:211$88'.
+Removing empty process `fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:211$88'.
+Found and cleaned up 1 empty switch in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:177$80'.
+Removing empty process `fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:177$80'.
+Found and cleaned up 2 empty switches in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:222$92'.
+Removing empty process `fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:222$92'.
+Found and cleaned up 2 empty switches in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:103$30'.
+Removing empty process `fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:103$30'.
+Found and cleaned up 2 empty switches in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:89$25'.
+Removing empty process `fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:89$25'.
+Found and cleaned up 2 empty switches in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:77$17'.
+Removing empty process `fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:77$17'.
+Found and cleaned up 2 empty switches in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:66$11'.
+Removing empty process `fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:66$11'.
+Found and cleaned up 2 empty switches in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:55$5'.
+Removing empty process `fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:55$5'.
+Found and cleaned up 1 empty switch in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:37$3'.
+Removing empty process `fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:37$3'.
+Found and cleaned up 1 empty switch in `\fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:19$1'.
+Removing empty process `fifo.$proc$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:19$1'.
+Cleaned up 18 empty switches.
+
+2.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo.
+<suppressed ~31 debug messages>
+
+2.4. Executing FUTURE pass.
+
+2.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo.
+
+2.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo..
+Removed 60 unused cells and 117 unused wires.
+<suppressed ~69 debug messages>
+
+2.7. Executing CHECK pass (checking for obvious problems).
+Checking module fifo...
+Found and reported 0 problems.
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo.
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\fifo'.
+Computing hashes of 40 cells of `\fifo'.
+Finding duplicate cells in `\fifo'.
+Removed a total of 0 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~25 debug messages>
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \fifo.
+Performed a total of 0 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\fifo'.
+Computing hashes of 40 cells of `\fifo'.
+Finding duplicate cells in `\fifo'.
+Removed a total of 0 cells.
+
+2.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo..
+
+2.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo.
+
+2.8.8. Finished fast OPT passes. (There is nothing left to do.)
+
+2.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 30 bits (of 32) from port A of cell fifo.$sub$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:105$34 ($sub).
+Removed top 31 bits (of 32) from port B of cell fifo.$sub$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:105$34 ($sub).
+Removed top 29 bits (of 32) from port Y of cell fifo.$sub$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:105$34 ($sub).
+Removed top 30 bits (of 32) from port A of cell fifo.$and$formal_73c65fcc__01_ap_fifo_not_full_empty_monitor.sv:105$35 ($and).
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo..
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fifo.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\fifo'.
+Computing hashes of 40 cells of `\fifo'.
+Finding duplicate cells in `\fifo'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo..
+
+2.12.4. Finished fast OPT passes.
+
+2.13. Executing SORT pass.
+
+2.14. Printing statistics.
+
+=== fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       42 wires
+      158 wire bits
+       18 public wires
+       45 public wire bits
+        9 ports
+        9 port bits
+       40 cells
+        1   $and
+        7   $check
+        2   $dff
+        6   $logic_and
+        6   $logic_not
+        1   $logic_or
+       16   $mux
+        1   $sub
+
+2.15. Executing CHECK pass (checking for obvious problems).
+Checking module fifo...
+Found and reported 0 problems.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `fifo'. Setting top module to fifo.
+
+3.1. Analyzing design hierarchy..
+Top module:  \fifo
+
+3.2. Analyzing design hierarchy..
+Top module:  \fifo
+Removed 0 unused modules.
+Module fifo directly or indirectly contains formal properties -> setting "keep" attribute.
+
+4. Executing jny backend.
+
+5. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: ff7f0fc5f7, time: 0.04s, user: 0.01s, system: 0.02s, MEM: 17.81 MB peak
+Yosys 0.63+184 (git sha1 240439bdb-dirty, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
+Time spent: 20% 2x hierarchy (0 sec), 17% 2x read_verilog (0 sec), ...

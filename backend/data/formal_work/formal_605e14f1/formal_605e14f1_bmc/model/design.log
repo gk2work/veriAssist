@@ -1,0 +1,18 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.63+184 (git sha1 240439bdb-dirty, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: dut.sv
+Parsing formal SystemVerilog input from `dut.sv' to AST representation.
+Storing AST representation for module `$abstract\fifo'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: fifo_formal_checker_monitor.sv
+Parsing formal SystemVerilog input from `fifo_formal_checker_monitor.sv' to AST representation.
+fifo_formal_checker_monitor.sv:26: ERROR: syntax error, unexpected '>'

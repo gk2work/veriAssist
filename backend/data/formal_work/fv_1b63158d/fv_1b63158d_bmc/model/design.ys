@@ -1,0 +1,9 @@
+# running in /Users/gautamthakur/Downloads/veriAssist-imp/veriassist/backend/data/formal_work/fv_1b63158d/fv_1b63158d_bmc/src/
+read -formal fifo.sv
+read -formal fifo_sva.sv
+prep -top fifo
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

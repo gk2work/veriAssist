@@ -1,0 +1,44 @@
+{
+  "format": "Yosys Witness Trace",
+  "generator": "smtbmc",
+  "clocks": [
+    {"path": ["\\clk"], "edge": "posedge", "offset": 0}
+  ],
+  "signals": [
+    {"path": ["\\clk"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\rd_en"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\rst_n"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\u_dut", "\\_witness_", "\\anyseq_auto_setundef_cc_550_execute_190"], "width": 8, "offset": 0, "init_only": false},
+    {"path": ["\\u_dut", "\\_witness_", "\\anyseq_auto_setundef_cc_550_execute_192"], "width": 3, "offset": 0, "init_only": false},
+    {"path": ["\\u_dut", "\\_witness_", "\\anyseq_auto_setundef_cc_550_execute_194"], "width": 8, "offset": 0, "init_only": false},
+    {"path": ["\\u_dut", "\\_witness_", "\\anyseq_auto_setundef_cc_550_execute_196"], "width": 3, "offset": 0, "init_only": false},
+    {"path": ["\\wr_data"], "width": 8, "offset": 0, "init_only": false},
+    {"path": ["\\wr_en"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\u_dut", "\\count"], "width": 4, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\mem", "\\[0]"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\mem", "\\[1]"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\mem", "\\[2]"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\mem", "\\[3]"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\mem", "\\[4]"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\mem", "\\[5]"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\mem", "\\[6]"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\mem", "\\[7]"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\rd_data"], "width": 8, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\rd_ptr"], "width": 3, "offset": 0, "init_only": true},
+    {"path": ["\\u_dut", "\\wr_ptr"], "width": 3, "offset": 0, "init_only": true}
+  ],
+  "steps": [
+    {"bits": "00000000000000????????????????????????????????????????????????????????0000000011000000000000000000000000000000000000"},
+    {"bits": "1000000000000000000000000000000100"},
+    {"bits": "1000000000000000000000000000000100"},
+    {"bits": "1000000000000000000000000000000100"},
+    {"bits": "1000000000000000000000000000000100"},
+    {"bits": "1000000000000000000000000000000100"},
+    {"bits": "1000000000000000000000000000000100"},
+    {"bits": "1000000000000000000000000000000100"},
+    {"bits": "1000000000000000000000000000000100"},
+    {"bits": "1000000000000000000000000000000100"},
+    {"bits": "0000000000000000000000000000000100"},
+    {"bits": "0000000000000000000000000000000000"}
+  ]
+}

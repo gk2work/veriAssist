@@ -1,0 +1,16 @@
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+bmc: depth 20
+
+[engines]
+smtbmc
+
+[script]
+read -formal formal_f036e8c3__03_assert_full_max_monitor.sv
+prep -top fifo_checker
+
+[files]
+formal_f036e8c3__03_assert_full_max_monitor.sv

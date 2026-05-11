@@ -1,0 +1,13 @@
+[options]
+mode bmc
+depth 20
+
+[engines]
+smtbmc
+
+[script]
+read -formal formal_ee8b5d88_monitor.sv
+prep -top fifo
+
+[files]
+formal_ee8b5d88_monitor.sv

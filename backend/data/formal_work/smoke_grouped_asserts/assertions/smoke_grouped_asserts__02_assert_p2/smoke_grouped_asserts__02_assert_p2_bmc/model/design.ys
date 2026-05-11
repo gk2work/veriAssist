@@ -1,0 +1,8 @@
+# running in /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/smoke_grouped_asserts/assertions/smoke_grouped_asserts__02_assert_p2/smoke_grouped_asserts__02_assert_p2_bmc/src/
+read -formal smoke_grouped_asserts__02_assert_p2_monitor.sv
+prep -top mini_checker
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

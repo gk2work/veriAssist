@@ -1,0 +1,6 @@
+Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+engine_0 (smtbmc) returned FAIL
+counterexample trace: engine_0/trace.vcd
+counterexample trace: engine_0/trace.yw
+  failed assertion fifo.ap_fifo_empty_prev_read_no_write at formal_201d655d__04_ap_fifo_empty_prev_read_no_write_monitor.sv:141.17-141.60 step 1

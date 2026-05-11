@@ -1,0 +1,28 @@
+initial
+assume (= [$auto$async2sync.cc:107:execute$166] false)
+assume (= [$auto$async2sync.cc:116:execute$170] true)
+assume (= [_va_ap_fifo_read_write_equal_delay_3] true)
+assume (= [empty_out_prev] true)
+assume (= [full_out_prev] true)
+
+state 0
+assume (= [clk_in] false)
+assume (= [data_start] false)
+assume (= [empty_out] false)
+assume (= [full_out] false)
+assume (= [rd_data_out] false)
+assume (= [rd_en_in] false)
+assume (= [rst_n_in] true)
+assume (= [wr_data_in] false)
+assume (= [wr_en_in] false)
+
+state 1
+assume (= [clk_in] false)
+assume (= [data_start] false)
+assume (= [empty_out] false)
+assume (= [full_out] false)
+assume (= [rd_data_out] false)
+assume (= [rd_en_in] false)
+assume (= [rst_n_in] false)
+assume (= [wr_data_in] false)
+assume (= [wr_en_in] false)

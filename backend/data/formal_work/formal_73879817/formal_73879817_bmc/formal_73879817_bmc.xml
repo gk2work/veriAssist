@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-04-07T16:30:09" hostname="Gautams-MacBook-Pro.local" package="formal_73879817" id="0" name="bmc" tests="1" errors="1" failures="0" time="0" skipped="0">
+<properties>
+<property name="os" value="Darwin"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="ERROR"/>
+</properties>
+<testcase classname="bmc" name="bmc" time="0">
+<error type="ERROR"/>
+</testcase>
+<system-out>SBY 16:30:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_73879817/formal_73879817_bmc] Removing directory '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_73879817/formal_73879817_bmc'.
+SBY 16:30:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_73879817/formal_73879817_bmc] Copy '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_73879817/formal_73879817_monitor.sv' to '/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_73879817/formal_73879817_bmc/src/formal_73879817_monitor.sv'.
+SBY 16:30:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_73879817/formal_73879817_bmc] engine_0: smtbmc
+SBY 16:30:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_73879817/formal_73879817_bmc] base: starting process &quot;cd /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_73879817/formal_73879817_bmc/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 16:30:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_73879817/formal_73879817_bmc] base: formal_73879817_monitor.sv:43: ERROR: syntax error, unexpected OP_EQ, expecting TOK_ID or '#'
+SBY 16:30:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_73879817/formal_73879817_bmc] base: finished (returncode=1)
+SBY 16:30:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_73879817/formal_73879817_bmc] base: task failed. ERROR.
+SBY 16:30:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_73879817/formal_73879817_bmc] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 16:30:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_73879817/formal_73879817_bmc] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 16:30:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_73879817/formal_73879817_bmc] summary: engine_0 (smtbmc) did not return a status
+SBY 16:30:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_73879817/formal_73879817_bmc] summary: engine_0 did not produce any traces
+SBY 16:30:09 [/Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/formal_73879817/formal_73879817_bmc] DONE (ERROR, rc=16)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

@@ -1,0 +1,10 @@
+# running in /Users/gautamthakur/Downloads/veriassist/backend/data/formal_work/debug_axi2/debug_axi2_bmc/src/
+read -formal axi.sv
+read -formal axi_formal_checker_monitor.sv
+read -formal formal_wrapper.sv
+prep -top formal_wrapper
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

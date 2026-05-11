@@ -1,0 +1,16 @@
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+bmc: depth 20
+
+[engines]
+smtbmc
+
+[script]
+read -formal formal_13eacc54__06_ap_fifo_empty_after_reset_monitor.sv
+prep -top fifo
+
+[files]
+formal_13eacc54__06_ap_fifo_empty_after_reset_monitor.sv

@@ -1,0 +1,21 @@
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+bmc: depth 10
+bmc: timeout 300
+
+[engines]
+smtbmc
+
+[script]
+read -formal fsm_buggy_fail.sv
+read -formal fsm_formal_checker_monitor.sv
+read -formal formal_wrapper.sv
+prep -top formal_wrapper
+
+[files]
+fsm_buggy_fail.sv src/fsm_buggy_fail.sv
+fsm_formal_checker_monitor.sv src/fsm_formal_checker_monitor.sv
+formal_wrapper.sv src/formal_wrapper.sv
