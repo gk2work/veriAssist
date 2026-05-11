@@ -20,7 +20,7 @@ DEFAULT_MODELS = [
     "llama3.1:8b-instruct-q4_K_M",
 ]
 
-OLLAMA_BASE = "http://localhost:11434"
+OLLAMA_BASE = __import__("os").environ.get("OLLAMA_BASE_URL", "http://localhost:11434")
 
 
 class OllamaService:

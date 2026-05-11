@@ -1,0 +1,80 @@
+services:
+
+  # ── Ollama LLM runtime ────────────────────────────────────
+  ollama:
+    image: ollama/ollama:latest
+    container_name: veriassist-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:11434/api/tags"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+
+  # Pull required models on first start
+  ollama-init:
+    image: ollama/ollama:latest
+    container_name: veriassist-ollama-init
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+    entrypoint: >
+      /bin/sh -c "
+        echo 'Pulling qwen2.5-coder:3b-instruct ...' &&
+        ollama pull qwen2.5-coder:3b-instruct &&
+        echo 'Pulling nomic-embed-text ...' &&
+        ollama pull nomic-embed-text &&
+        echo 'Models ready.'
+      "
+    restart: "no"
+
+  # ── FastAPI backend ───────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: veriassist-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - chromadb_data:/app/data/chromadb
+      - formal_work_data:/app/data/formal_work
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+    depends_on:
+      ollama:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+  # ── React frontend (nginx) ────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_BASE=
+    container_name: veriassist-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  ollama_data:       # Persists downloaded Ollama models
+  chromadb_data:     # Persists RAG vector database
+  formal_work_data:  # Persists formal verification job outputs

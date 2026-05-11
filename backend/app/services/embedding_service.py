@@ -15,7 +15,7 @@ from typing import Optional
 
 logger = logging.getLogger("veriassist.embedding")
 
-OLLAMA_BASE = "http://localhost:11434"
+OLLAMA_BASE = __import__("os").environ.get("OLLAMA_BASE_URL", "http://localhost:11434")
 DEFAULT_EMBED_MODEL = "nomic-embed-text"
 
 

@@ -1,4 +1,4 @@
-export const API_BASE = "http://localhost:8000";
+export const API_BASE = import.meta.env.VITE_API_BASE ?? "http://localhost:8000";
 
 export const MODES = [
   { id: "chat", label: "Chat", icon: "\u{1F4AC}", desc: "General VLSI Q&A" },
