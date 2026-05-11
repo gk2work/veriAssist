@@ -10,9 +10,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# SymbiYosys (sby) — install from source via pip
-RUN pip install --no-cache-dir click \
-    "git+https://github.com/YosysHQ/sby.git@master"
+# SymbiYosys (sby) — clone and wire up manually (not a pip package)
+RUN pip install --no-cache-dir click && \
+    git clone --depth=1 https://github.com/YosysHQ/sby.git /opt/sby && \
+    ln -sf /opt/sby/sbysrc/sby.py /usr/local/bin/sby && \
+    chmod +x /opt/sby/sbysrc/sby.py
+
+ENV PYTHONPATH=/opt/sby/sbysrc
 
 # Python dependencies
 COPY requirements.txt .
