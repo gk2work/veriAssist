@@ -435,12 +435,17 @@ def _resolve_monitor_signal(
     actual_reset: str,
 ) -> Optional[str]:
     """Map lowered monitor signal names back to DUT or wrapper signals."""
+    # Always resolve clock/reset to wrapper ports — they are module inputs,
+    # never free anyseq wires, even when the DUT doesn't have them.
+    CLOCK_NAMES = {"clk", "clock", "clk_in", "clk_i"}
+    RESET_NAMES = {"rst_n", "rst", "reset", "reset_n", "rstn", "rst_n_in", "rst_i"}
+    if monitor_name in CLOCK_NAMES or monitor_name == actual_clock:
+        return "clk"
+    if monitor_name in RESET_NAMES or monitor_name == actual_reset:
+        return "rst_n"
+
     if monitor_name in dut_port_names:
         return monitor_name
-    if monitor_name == "clk_in":
-        return actual_clock or "clk"
-    if monitor_name == "rst_n_in":
-        return actual_reset or "rst_n"
 
     for suffix in ("_in", "_out"):
         if monitor_name.endswith(suffix):
